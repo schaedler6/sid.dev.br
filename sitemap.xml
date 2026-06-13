@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://sid.dev.br/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://sid.dev.br/README.md</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sid.dev.br/SOBRE-SID.md</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sid.dev.br/PROJETOS.md</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://sid.dev.br/GITHUB.md</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sid.dev.br/LIVROS-E-MUSICA.md</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://sid.dev.br/llms.txt</loc>
+    <lastmod>2026-06-12</lastmod>
+    <priority>0.7</priority>
+  </url>
+</urlset>
+
