@@ -1,64 +1,477 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; img-src 'self' data: https:; media-src 'self' data: blob:; script-src 'self'; style-src 'self' 'unsafe-inline'; frame-src https://open.spotify.com; connect-src 'self' https://api.github.com; form-action 'none'">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SID.DEV.BR | Portfólio Digital</title>
+  <meta name="description" content="Portfólio digital de Sid Schaedler com tecnologia, cyber segurança, IA, livros, música e projetos digitais.">
+  <link rel="stylesheet" href="preview.css?v=restaurado-pc-20260613_125020">
+  <link rel="sitemap" type="application/xml" href="sitemap.xml">
+  <link rel="alternate" type="text/plain" href="llms.txt" title="LLMS.txt">
+  <link rel="alternate" type="text/markdown" href="SOBRE-SID.md" title="Sobre Sid Schaedler">
+  <link rel="alternate" type="text/markdown" href="PROJETOS.md" title="Projetos SID">
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
+  <link rel="shortcut icon" href="favicon.ico">
+<style id="sid-inline-botoes-hero-final">
+/* SOMENTE OS 4 BOTÕES DO HERO — não mexe em partículas/orbe */
 
-  <title>Sid Schaedler | ADS Feevale, Cibersegurança e IA Local</title>
-  <meta name="description" content="Sid Schaedler — Estudante de ADS na Feevale, com projetos em cibersegurança defensiva, IA local, PowerShell, Python, servidores, automação e organização digital.">
+.hero .sid-hero-buttons-clean,
+.hero .actions.sid-hero-buttons-clean,
+.hero .hero-cta-grid.sid-hero-buttons-clean {
+  display: grid !important;
+  grid-template-columns: 285px 285px !important;
+  grid-template-rows: 52px 52px !important;
+  gap: 14px !important;
+  width: 584px !important;
+  max-width: 584px !important;
+  margin-top: 28px !important;
+  padding: 0 !important;
+  align-items: center !important;
+}
 
-  <link rel="canonical" href="https://sid.dev.br/">
-  <link rel="alternate" hreflang="pt-BR" href="https://sid.dev.br/">
-  <link rel="alternate" hreflang="en" href="https://sid.dev.br/en/">
-  <link rel="alternate" hreflang="x-default" href="https://sid.dev.br/">
+.hero .sid-hero-buttons-clean > a.sid-hero-button {
+  box-sizing: border-box !important;
+  width: 285px !important;
+  min-width: 285px !important;
+  max-width: 285px !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
 
-  <meta property="og:type" content="website">
-  <meta property="og:locale" content="pt_BR">
-  <meta property="og:locale:alternate" content="en_US">
-  <meta property="og:title" content="Sid Schaedler | Cibersegurança, IA Local e Automação">
-  <meta property="og:description" content="Portfólio de Sid Schaedler, estudante de ADS na Feevale, com projetos em cibersegurança defensiva, IA local, PowerShell, Python, servidores e automação.">
-  <meta property="og:url" content="https://sid.dev.br/">
-  <meta property="og:site_name" content="SID.DEV.BR">
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Sid Schaedler | Cibersegurança, IA Local e Automação">
-  <meta name="twitter:description" content="Projetos em cibersegurança defensiva, IA local, PowerShell, Python, servidores, automação e organização digital.">
+  padding: 0 18px !important;
+  margin: 0 !important;
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "Sidinei Schaedler",
-    "alternateName": "Sid Schaedler",
-    "url": "https://sid.dev.br/",
-    "email": "mailto:schaedler6@msn.com",
-    "sameAs": [
-      "https://github.com/schaedler6",
-      "https://www.linkedin.com/in/sidschaedler/",
-      "https://open.spotify.com/intl-pt/artist/4JpSt47bo8afDdSu7DqSH4"
-    ],
-    "affiliation": {
-      "@type": "CollegeOrUniversity",
-      "name": "Universidade Feevale"
-    },
-    "jobTitle": "Estudante de ADS na Feevale",
-    "knowsAbout": [
-      "Cibersegurança defensiva",
-      "Inteligência Artificial Local",
-      "PowerShell",
-      "Python",
-      "Automação",
-      "Servidores",
-      "Redes",
-      "VPN",
-      "Obsidian",
-      "RAG",
-      "Desenvolvimento de Sistemas"
-    ]
+  border-radius: 999px !important;
+  border: 1px solid rgba(0, 217, 255, 0.62) !important;
+
+  background: linear-gradient(180deg, rgba(25, 37, 49, 0.94), rgba(2, 5, 8, 0.99)) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 217, 255, 0.12),
+    0 12px 28px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+
+  text-decoration: none !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  font-family: inherit !important;
+}
+
+.hero .sid-hero-buttons-clean > a.sid-hero-button-primary {
+  color: #f6fbff !important;
+}
+
+.hero .sid-hero-buttons-clean > a.sid-hero-button-secondary {
+  color: #00eaff !important;
+}
+
+.hero .sid-hero-buttons-clean > a.sid-hero-button::before,
+.hero .sid-hero-buttons-clean > a.sid-hero-button::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .hero .sid-hero-buttons-clean,
+  .hero .actions.sid-hero-buttons-clean,
+  .hero .hero-cta-grid.sid-hero-buttons-clean {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(4, 52px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
-  </script>
 
-  <link rel="stylesheet" href="preview.css?v=galeria-layout-final-profissional-20260612">
+  .hero .sid-hero-buttons-clean > a.sid-hero-button {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
+</style>
+<style id="sid-global-buttons-reactive">
+/* =========================================================
+   SID — PADRÃO GLOBAL DE BOTÕES REATIVOS
+   NÃO mexe em canvas, partículas, orbe, preview.js ou preview.css.
+   ========================================================= */
+
+:root {
+  --sid-btn-w: 285px;
+  --sid-btn-h: 52px;
+  --sid-btn-radius: 999px;
+  --sid-btn-bg-top: rgba(25, 37, 49, 0.94);
+  --sid-btn-bg-bottom: rgba(2, 5, 8, 0.99);
+  --sid-btn-border: rgba(0, 217, 255, 0.62);
+  --sid-btn-border-hover: rgba(0, 234, 255, 0.95);
+  --sid-btn-cyan: #00eaff;
+  --sid-btn-white: #f6fbff;
+}
+
+/* Botões do hero: exatamente 4, em 2x2 */
+.hero .sid-hero-buttons-clean,
+.hero .actions.sid-hero-buttons-clean,
+.hero .hero-cta-grid.sid-hero-buttons-clean,
+.hero .actions.hero-cta-grid {
+  display: grid !important;
+  grid-template-columns: var(--sid-btn-w) var(--sid-btn-w) !important;
+  grid-template-rows: var(--sid-btn-h) var(--sid-btn-h) !important;
+  gap: 14px !important;
+  width: 584px !important;
+  max-width: 584px !important;
+  margin-top: 28px !important;
+  padding: 0 !important;
+  align-items: center !important;
+}
+
+/* Padrão visual para botões do site */
+.hero .sid-hero-button,
+.hero .hero-cta-grid > a,
+.hero .actions.hero-cta-grid > a,
+a.btn,
+.btn,
+.actions a.btn,
+.hero-actions a.btn,
+.github-clean-actions a,
+.github-ultra-actions a,
+.github-final-section .hero-actions a,
+.book-actions a,
+.music-author-actions a,
+.spotify-actions a,
+.contact-links-official a.btn,
+.contact a.btn,
+#contato a.btn {
+  box-sizing: border-box !important;
+
+  min-width: 220px !important;
+  height: var(--sid-btn-h) !important;
+  min-height: var(--sid-btn-h) !important;
+  max-height: var(--sid-btn-h) !important;
+
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 18px !important;
+  margin: 0 !important;
+
+  border-radius: var(--sid-btn-radius) !important;
+  border: 1px solid var(--sid-btn-border) !important;
+
+  background:
+    linear-gradient(180deg, var(--sid-btn-bg-top), var(--sid-btn-bg-bottom)) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 217, 255, 0.12),
+    0 12px 28px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+
+  color: var(--sid-btn-cyan) !important;
+  text-decoration: none !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  font-family: inherit !important;
+
+  cursor: pointer !important;
+  transform: translateY(0) scale(1) !important;
+  transition:
+    transform 180ms ease,
+    border-color 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease,
+    color 180ms ease !important;
+}
+
+/* Hero com tamanho fixo igual na imagem */
+.hero .sid-hero-button,
+.hero .hero-cta-grid > a,
+.hero .actions.hero-cta-grid > a {
+  width: var(--sid-btn-w) !important;
+  min-width: var(--sid-btn-w) !important;
+  max-width: var(--sid-btn-w) !important;
+}
+
+/* Botão primário branco */
+.hero .sid-hero-button-primary,
+.hero .hero-cta-grid > a:first-child,
+.hero .actions.hero-cta-grid > a:first-child,
+a.btn.primary,
+.btn.primary {
+  color: var(--sid-btn-white) !important;
+}
+
+/* Reação ao mouse */
+.hero .sid-hero-button:hover,
+.hero .hero-cta-grid > a:hover,
+.hero .actions.hero-cta-grid > a:hover,
+a.btn:hover,
+.btn:hover,
+.actions a.btn:hover,
+.hero-actions a.btn:hover,
+.github-clean-actions a:hover,
+.github-ultra-actions a:hover,
+.github-final-section .hero-actions a:hover,
+.book-actions a:hover,
+.music-author-actions a:hover,
+.spotify-actions a:hover,
+.contact-links-official a.btn:hover,
+.contact a.btn:hover,
+#contato a.btn:hover {
+  transform: translateY(-3px) scale(1.018) !important;
+  border-color: var(--sid-btn-border-hover) !important;
+  color: var(--sid-btn-white) !important;
+
+  background:
+    linear-gradient(180deg, rgba(34, 50, 66, 0.98), rgba(2, 7, 12, 1)) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 234, 255, 0.28),
+    0 18px 36px rgba(0, 0, 0, 0.58),
+    0 0 24px rgba(0, 217, 255, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.12) !important;
+}
+
+/* Clique */
+.hero .sid-hero-button:active,
+.hero .hero-cta-grid > a:active,
+.hero .actions.hero-cta-grid > a:active,
+a.btn:active,
+.btn:active,
+.actions a.btn:active,
+.hero-actions a.btn:active,
+.github-clean-actions a:active,
+.github-ultra-actions a:active,
+.github-final-section .hero-actions a:active,
+.book-actions a:active,
+.music-author-actions a:active,
+.spotify-actions a:active,
+.contact-links-official a.btn:active,
+.contact a.btn:active,
+#contato a.btn:active {
+  transform: translateY(-1px) scale(0.992) !important;
+}
+
+/* Acessibilidade no teclado */
+.hero .sid-hero-button:focus-visible,
+.hero .hero-cta-grid > a:focus-visible,
+.hero .actions.hero-cta-grid > a:focus-visible,
+a.btn:focus-visible,
+.btn:focus-visible {
+  outline: 2px solid rgba(0, 234, 255, 0.95) !important;
+  outline-offset: 4px !important;
+}
+
+/* Remove a bolinha/orbe antigo APENAS dos botões */
+.hero .sid-hero-button::before,
+.hero .sid-hero-button::after,
+.hero .hero-cta-grid > a::before,
+.hero .hero-cta-grid > a::after,
+.hero .actions.hero-cta-grid > a::before,
+.hero .actions.hero-cta-grid > a::after,
+a.btn::before,
+a.btn::after,
+.btn::before,
+.btn::after,
+.actions a.btn::before,
+.actions a.btn::after,
+.hero-actions a.btn::before,
+.hero-actions a.btn::after,
+.github-clean-actions a::before,
+.github-clean-actions a::after,
+.github-ultra-actions a::before,
+.github-ultra-actions a::after,
+.book-actions a::before,
+.book-actions a::after,
+.music-author-actions a::before,
+.music-author-actions a::after,
+.spotify-actions a::before,
+.spotify-actions a::after {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+@media (max-width: 760px) {
+  .hero .sid-hero-buttons-clean,
+  .hero .actions.sid-hero-buttons-clean,
+  .hero .hero-cta-grid.sid-hero-buttons-clean,
+  .hero .actions.hero-cta-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(4, var(--sid-btn-h)) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero .sid-hero-button,
+  .hero .hero-cta-grid > a,
+  .hero .actions.hero-cta-grid > a {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}
+</style>
+<style id="sid-remove-orbes-botoes-final">
+/* =========================================================
+   SID — REMOVER ORBES/BOLINHAS SOMENTE DOS BOTÕES
+   Não mexe no orbe principal, partículas, canvas ou preview.js.
+   ========================================================= */
+
+/* Botões gerais */
+a.btn::before,
+a.btn::after,
+.btn::before,
+.btn::after,
+.actions a::before,
+.actions a::after,
+.hero-actions a::before,
+.hero-actions a::after,
+.book-actions a::before,
+.book-actions a::after,
+.music-author-actions a::before,
+.music-author-actions a::after,
+.spotify-actions a::before,
+.spotify-actions a::after,
+.contact-links-official a::before,
+.contact-links-official a::after,
+.contact a::before,
+.contact a::after,
+#contato a::before,
+#contato a::after {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Botão ABRIR SIDLOTO e botões da área GitHub */
+.github-clean-sidloto > a::before,
+.github-clean-sidloto > a::after,
+.github-ultra-sidloto > a::before,
+.github-ultra-sidloto > a::after,
+.github-final-sidloto > a::before,
+.github-final-sidloto > a::after,
+.sid-github-sidloto-card > a::before,
+.sid-github-sidloto-card > a::after,
+.github-clean-pacman > a::before,
+.github-clean-pacman > a::after,
+.github-ultra-pacman > a::before,
+.github-ultra-pacman > a::after,
+.github-final-pacman > a::before,
+.github-final-pacman > a::after,
+.sid-github-pacman-card > a::before,
+.sid-github-pacman-card > a::after,
+.github-clean-actions a::before,
+.github-clean-actions a::after,
+.github-ultra-actions a::before,
+.github-ultra-actions a::after,
+.github-final-section .hero-actions a::before,
+.github-final-section .hero-actions a::after {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background: none !important;
+  background-image: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  animation: none !important;
+  transform: none !important;
+}
+
+/* Centraliza o texto depois de remover a bolinha */
+.github-clean-sidloto > a,
+.github-ultra-sidloto > a,
+.github-final-sidloto > a,
+.sid-github-sidloto-card > a,
+.github-clean-pacman > a,
+.github-ultra-pacman > a,
+.github-final-pacman > a,
+.sid-github-pacman-card > a,
+.github-clean-actions a,
+.github-ultra-actions a,
+.github-final-section .hero-actions a {
+  justify-content: center !important;
+  text-align: center !important;
+  padding-left: 18px !important;
+  padding-right: 18px !important;
+}
+</style>
+<style id="sid-contact-links-final-css">
+/* SOMENTE BOTÕES DO CONTATO */
+.sid-contact-links-final {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  align-items: center !important;
+  gap: 14px !important;
+  max-width: 980px !important;
+  margin: 28px auto 0 !important;
+}
+
+.sid-contact-links-final a.btn {
+  min-width: 190px !important;
+  height: 52px !important;
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.sid-contact-links-final a.btn:first-child {
+  min-width: 285px !important;
+}
+
+@media (max-width: 760px) {
+  .sid-contact-links-final {
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .sid-contact-links-final a.btn,
+  .sid-contact-links-final a.btn:first-child {
+    width: 100% !important;
+    min-width: 0 !important;
+  }
+}
+</style>
 </head>
 <body>
 
@@ -76,7 +489,6 @@
       <a href="#musica">Música</a>
       <a href="#galeria">Galeria</a>
       <a href="#contato">Contato</a>
-          <a href="/en/" hreflang="en" aria-label="View English version">EN</a>
     </nav>
   </header>
 
@@ -84,19 +496,16 @@
 
     <section id="inicio" class="hero">
       <div class="hero-text reveal">
-        <p class="eyebrow">ADS FEEVALE • CIBERSEGURANÇA DEFENSIVA • IA LOCAL • AUTOMAÇÃO</p>
-        <h1>Sid <span>Schaedler</span></h1>
-        <h2 class="hero-subtitle">Estudante de ADS na Feevale, criando projetos com IA local, automação, servidores e cibersegurança defensiva.</h2>
-        <p class="intro">
-          Construo laboratórios defensivos, assistentes locais, automações com PowerShell/Python
-          e sistemas que transformam conhecimento em ferramenta.
-        </p>
+        <p class="eyebrow">ADS FEEVALE • DESENVOLVIMENTO DE SISTEMAS • IA • SERVIDORES • CIBERSEGURANÇA</p>
+        <h1>Sid<br><span>Schaedler</span></h1>
+        <h2 id="typing"></h2>
+        <p class="intro">Também desenvolvo projetos práticos envolvendo inteligência artificial, servidores, automação com PowerShell/Python e cibersegurança defensiva.</p>
 
-        <div class="actions hero-cta-grid">
-  <a href="#projetos" class="btn primary">VER PROJETOS TÉCNICOS</a>
-  <a href="https://github.com/schaedler6" class="btn secondary" target="_blank" rel="noopener noreferrer">ABRIR GITHUB</a>
-  <a href="https://www.linkedin.com/in/sidschaedler/" class="btn secondary" target="_blank" rel="noopener noreferrer">VER LINKEDIN</a>
-  <a href="#contato" class="btn secondary">CONTATO PROFISSIONAL</a>
+        <div class="actions hero-cta-grid sid-hero-buttons-clean">
+  <a href="#projetos" class="sid-hero-button sid-hero-button-primary">VER PROJETOS TÉCNICOS</a>
+  <a href="https://github.com/schaedler6" class="sid-hero-button sid-hero-button-secondary" target="_blank" rel="noopener noreferrer">ABRIR GITHUB</a>
+  <a href="https://www.linkedin.com/in/sidschaedler/" class="sid-hero-button sid-hero-button-secondary" target="_blank" rel="noopener noreferrer">VER LINKEDIN</a>
+  <a href="#contato" class="sid-hero-button sid-hero-button-secondary">CONTATO PROFISSIONAL</a>
 </div>
       </div>
 
@@ -227,7 +636,7 @@
     
     <section id="github" class="section github-clean-section">
       <div class="github-clean-heading reveal active">
-        <span>GITHUB & CÓDIGO</span>
+        <span>PORTFÓLIO TÉCNICO</span>
         <h2>Projetos no GitHub</h2>
         <p>
           Repositórios públicos, estudos, experimentos e projetos técnicos de desenvolvimento,
@@ -245,7 +654,7 @@
           <span class="github-clean-kicker">PAC-MAN DE CONTRIBUIÇÕES</span>
 
           <div class="github-clean-pacman-frame">
-            <svg width="1166" height="184" xmlns="http://www.w3.org/2000/svg"><desc>Generated with pacman-contribution-graph on Fri Jun 12 2026 02:54:41 GMT+0000 (Coordinated Universal Time)</desc><metadata>
+            <svg width="1166" height="184" xmlns="https://www.w3.org/2000/svg"><desc>Generated with pacman-contribution-graph on Fri Jun 12 2026 02:54:41 GMT+0000 (Coordinated Universal Time)</desc><metadata>
 		<info>
 			<frames>277</frames>
 			<frameRate>5</frameRate>
@@ -2353,7 +2762,7 @@
 
 <section id="livros" class="section books books-official">
       <div class="books-text reveal">
-        <p class="eyebrow">Livro em destaque</p>
+        <p class="eyebrow">ADS FEEVALE • DESENVOLVIMENTO DE SISTEMAS • IA • SERVIDORES • CIBERSEGURANÇA</p>
         <h2>Minha Vó Era Vida Loca e Agora é Gamer</h2>
         <p>
           Uma história divertida sobre família, memória, caos e tecnologia.
@@ -2410,313 +2819,59 @@
 
 <!-- SID_END_MUSICA_SECTION -->
 
-    <section id="galeria" class="section">
-      <div class="section-title reveal">
-        <p class="eyebrow">Biblioteca Visual</p>
-        <h2>Projetos Visuais e Autorais</h2>
-      </div>
-
-      <div class="gallery-grid">
-        <article class="gallery-card reveal">
-          <img src="assets/images/865c3994-25e6-41bb-ade8-43cce6af83f1.JPG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>865c3994-25e6-41bb-ade8-43cce6af83f1.JPG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0001.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0001.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0066.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0066.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0068.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0068.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0070.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0070.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0072.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0072.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0121.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0121.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0122.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0122.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0123.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0123.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0126.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0126.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0127.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0127.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0132.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0132.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0133.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0133.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0145.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0145.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0148.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0148.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0152.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0152.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0159.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0159.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0160.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0160.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0182.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0182.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0184.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0184.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0186.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0186.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_0251.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_0251.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_8626.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_8626.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_8633.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_8633.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_8634.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_8634.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_8635.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_8635.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_8637.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_8637.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_8993.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_8993.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9101 2.JPG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9101 2.JPG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9101.JPG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9101.JPG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9221.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9221.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9226.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9226.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9502.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9502.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9504.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9504.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9505.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9505.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9510.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9510.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9938.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9938.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9945.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9945.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9957.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9957.PNG</p>
-          </div>
-        </article>
-        <article class="gallery-card reveal">
-          <img src="assets/images/IMG_9958.PNG" alt="Imagem do projeto SID">
-          <div>
-            <span>SID Visual</span>
-            <p>IMG_9958.PNG</p>
-          </div>
-        </article>
-
-      </div>
-    </section>
-    <section id="contato" class="section contact">
-  <div class="section-title reveal">
-    <span>CONTATO PROFISSIONAL</span>
-    <h2>sid.dev.br</h2>
-    <p>
-      Estudante de ADS na Universidade Feevale, com projetos em cibersegurança defensiva,
-      IA local, automação, PowerShell, Python, servidores e organização digital.
+    <section id="galeria" class="section sid-gallery-approved-section">
+  <div class="section-heading reveal">
+    <p class="eyebrow">ADS FEEVALE • DESENVOLVIMENTO DE SISTEMAS • IA • SERVIDORES • CIBERSEGURANÇA</p>
+    <h2>Projetos Visuais e Autorais</h2>
+    <p class="section-description">
+      Uma seleção curada de imagens, capas, identidades visuais e experimentos criativos ligados aos meus projetos digitais, editoriais e autorais.
     </p>
   </div>
 
-  <div class="actions contact-actions reveal">
-    <a class="btn primary" href="mailto:schaedler6@msn.com">schaedler6@msn.com</a>
-    <a class="btn secondary" href="https://www.linkedin.com/in/sidschaedler/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-    <a class="btn secondary" href="https://github.com/schaedler6" target="_blank" rel="noopener noreferrer">GitHub</a>
-    <a class="btn secondary" href="https://open.spotify.com/intl-pt/artist/4JpSt47bo8afDdSu7DqSH4" target="_blank" rel="noopener noreferrer">Spotify</a>
+  <div class="gallery-grid sid-gallery-approved-grid">
+    <article class="sid-gallery-approved-card reveal">
+      <img src="assets/images/galeria-curada/kabbalahsite.PNG?v=galeria-aprovada-20260612" alt="Arte visual do projeto Kabbalah Studio com identidade visual e simbologia.">
+      <p class="sid-gallery-approved-tag">IDENTIDADE VISUAL E SIMBOLOGIA</p>
+      <h3>Kabbalah Studio</h3>
+    </article>
+
+    <article class="sid-gallery-approved-card reveal">
+      <img src="assets/images/galeria-curada/sid_visual.JPG?v=galeria-aprovada-20260612" alt="Retrato visual autoral de SID criado como experimento com inteligência artificial.">
+      <p class="sid-gallery-approved-tag">EXPERIMENTO VISUAL COM IA</p>
+      <h3>SID Visual</h3>
+    </article>
+
+    <article class="sid-gallery-approved-card reveal">
+      <img src="assets/images/galeria-curada/capanova.png?v=galeria-aprovada-20260612" alt="Capa do livro Minha Vó Era Vida Loca e Agora é Gamer.">
+      <p class="sid-gallery-approved-tag">DESIGN EDITORIAL E KDP</p>
+      <h3>Minha Vó Era Vida Loca e Agora é Gamer</h3>
+    </article>
+
+    <article class="sid-gallery-approved-card reveal">
+      <img src="assets/images/galeria-curada/IMG_8637.PNG?v=galeria-aprovada-20260612" alt="Imagem de criação digital autoral do ecossistema SID.">
+      <p class="sid-gallery-approved-tag">CRIAÇÃO DIGITAL</p>
+      <h3>Criação Digital SID</h3>
+    </article>
   </div>
 </section>
+    <section id="contato" class="section contact contact-official">
+      <div class="reveal">
+        <p class="eyebrow">ADS FEEVALE • DESENVOLVIMENTO DE SISTEMAS • IA • SERVIDORES • CIBERSEGURANÇA</p>
+        <h2>sid.dev.br</h2>
+        <p>
+          Portfólio oficial de Sid Schaedler para tecnologia, cyber segurança,
+          projetos digitais, livros e música.
+        </p>
+
+        <div class="contact-links-official sid-contact-links-final">
+  <a href="mailto:schaedler6@msn.com" class="btn secondary">SCHAEDLER6@MSN.COM</a>
+  <a href="https://www.linkedin.com/in/sidschaedler/" class="btn secondary" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
+  <a href="https://github.com/schaedler6" class="btn secondary" target="_blank" rel="noopener noreferrer">GITHUB</a>
+  <a href="https://open.spotify.com/intl-pt/artist/4JpSt47bo8afDdSu7DqSH4" class="btn secondary" target="_blank" rel="noopener noreferrer">SPOTIFY</a>
+  <a href="https://a.co/d/0dfRl0qN" class="btn secondary" target="_blank" rel="noopener noreferrer">AMAZON</a>
+</div>
+      </div>
+    </section>
 
   </main>
 
@@ -2725,11 +2880,15 @@
   </footer>
 
   <script src="preview.js?v=pacman-github-force-20260612"></script>
-<script src="assets/js/gallery-labels-override.js?v=galeria-textos-profissionais-20260612"></script>
-<script src="assets/js/gallery-curated-4.js?v=galeria-criacao-digital-ajuste-20260612"></script>
-<script src="assets/js/gallery-final-text-image-fix.js?v=galeria-textos-quadros-largos-20260612"></script>
 </body>
 </html>
+
+
+
+
+
+
+
 
 
 

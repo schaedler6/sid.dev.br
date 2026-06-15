@@ -1,25 +1,34 @@
-# Sid Schaedler Projects
+# Technical Projects
 
-## Cybersecurity Labs
+Sid Schaedler's technical projects are organized around system creation and development, automation, artificial intelligence, servers and defensive cybersecurity.
 
-Practical labs for defensive cybersecurity, networks, hardening, logs, investigation, and environment protection.
+## Main focus
 
-## Hermes Project
+The main focus of the portfolio is systems development.
 
-Local knowledge assistant using Obsidian, local AI, RAG, and note organization for contextual search and productivity.
+## Project areas
 
-## Atlas Automation
+- Web systems
+- Scripts and automations
+- Python projects
+- PowerShell projects
+- Dashboards and data analysis
+- Digital environment organization
+- Defensive labs
+- Servers and infrastructure
+- Local artificial intelligence
+- Productivity tool integration
 
-Automation project with PowerShell, servers, TrueNAS, Docker, and digital organization workflows.
+## Featured projects
 
-## Sidloto
+### Sidloto
 
-Python project focused on analysis, data organization, and applied logical reasoning.
+Authorial project focused on analysis, organization and combination generation, with emphasis on logic, automation and web interface.
 
-## SID.DEV.BR
+### GitHub and technical studies
 
-Bilingual digital portfolio focused on technology, local AI, automation, cybersecurity, books, music, and digital creation.
+Public repositories with studies, experiments, scripts and practical projects.
 
-## Book Claw
+### sid.dev.br portfolio
 
-Author workflow for organizing, reviewing, publishing, and automating Amazon KDP materials.
+Authorial website created to bring together professional identity, technical projects, GitHub, book, music and visual experiences.

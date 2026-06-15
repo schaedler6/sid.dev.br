@@ -1,0 +1,93 @@
+/* =========================================================
+   SID — SOMENTE BOTÕES DO HERO
+   Não mexe em partículas, orbe, canvas-bg, preview.js ou preview.css.
+   ========================================================= */
+
+.hero .sid-hero-buttons-clean {
+  display: grid !important;
+  grid-template-columns: 285px 285px !important;
+  grid-template-rows: 52px 52px !important;
+  gap: 14px !important;
+  width: 584px !important;
+  max-width: 584px !important;
+  margin-top: 28px !important;
+  padding: 0 !important;
+  align-items: center !important;
+}
+
+.hero .sid-hero-buttons-clean .sid-hero-button {
+  box-sizing: border-box !important;
+  width: 285px !important;
+  min-width: 285px !important;
+  max-width: 285px !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  padding: 0 18px !important;
+  margin: 0 !important;
+
+  border-radius: 999px !important;
+  border: 1px solid rgba(0, 217, 255, 0.62) !important;
+
+  background:
+    linear-gradient(180deg, rgba(25, 37, 49, 0.92), rgba(2, 5, 8, 0.98)) !important;
+
+  box-shadow:
+    0 0 0 1px rgba(0, 217, 255, 0.12),
+    0 12px 28px rgba(0, 0, 0, 0.42),
+    inset 0 1px 0 rgba(255, 255, 255, 0.08) !important;
+
+  text-decoration: none !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+
+  font-size: 12px !important;
+  font-weight: 800 !important;
+  letter-spacing: 0.16em !important;
+  font-family: inherit !important;
+}
+
+.hero .sid-hero-buttons-clean .sid-hero-button-primary {
+  color: #f6fbff !important;
+}
+
+.hero .sid-hero-buttons-clean .sid-hero-button-secondary {
+  color: #00eaff !important;
+}
+
+.hero .sid-hero-buttons-clean .sid-hero-button:hover {
+  transform: translateY(-2px) !important;
+  border-color: rgba(0, 234, 255, 0.92) !important;
+  box-shadow:
+    0 0 0 1px rgba(0, 234, 255, 0.24),
+    0 16px 34px rgba(0, 0, 0, 0.50),
+    0 0 22px rgba(0, 217, 255, 0.18) !important;
+}
+
+/* garante que nenhuma bolinha antiga apareça nesses 4 botões */
+.hero .sid-hero-buttons-clean .sid-hero-button::before,
+.hero .sid-hero-buttons-clean .sid-hero-button::after {
+  content: none !important;
+  display: none !important;
+}
+
+@media (max-width: 760px) {
+  .hero .sid-hero-buttons-clean {
+    grid-template-columns: 1fr !important;
+    grid-template-rows: repeat(4, 52px) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero .sid-hero-buttons-clean .sid-hero-button {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}

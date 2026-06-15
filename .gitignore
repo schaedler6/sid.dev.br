@@ -1,21 +1,19 @@
-# Backups e auditorias locais
-backup_*/
-_security_audit_*/
-*.zip
-*.log
+backup*/
+_security_audit*/
 *.ps1
-*.bak
-*.tmp
-
-# Segredos e chaves
-.env
+*.log
+*.zip
+*.7z
+*.rar
 *.env
 *.key
 *.pem
+*.pfx
 *.p12
-*.crt
-
-# Sistema
+*.db
+*.sqlite
+*.bak
+*.backup
+*.tmp
 .DS_Store
 Thumbs.db
-desktop.ini

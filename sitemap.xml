@@ -1,28 +1,89 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="https://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
   <url>
     <loc>https://sid.dev.br/</loc>
-    <lastmod>2026-06-15</lastmod>
-    <priority>1.0</priority>
+    <priority>1.00</priority>
   </url>
-  <url>
-    <loc>https://sid.dev.br/en/</loc>
-    <lastmod>2026-06-15</lastmod>
-    <priority>0.9</priority>
-  </url>
+
   <url>
     <loc>https://sid.dev.br/llms.txt</loc>
-    <lastmod>2026-06-15</lastmod>
-    <priority>0.8</priority>
+    <priority>0.95</priority>
   </url>
+
+  <url>
+    <loc>https://sid.dev.br/LLM-CONTEXT.md</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://sid.dev.br/AI-SUMMARY.md</loc>
+    <priority>0.90</priority>
+  </url>
+
+  <url>
+    <loc>https://sid.dev.br/BOTS-README.md</loc>
+    <priority>0.85</priority>
+  </url>
+
+  <url>
+    <loc>https://sid.dev.br/README.md</loc>
+    <priority>0.80</priority>
+  </url>
+
   <url>
     <loc>https://sid.dev.br/SOBRE-SID.md</loc>
-    <lastmod>2026-06-15</lastmod>
-    <priority>0.7</priority>
+    <priority>0.80</priority>
   </url>
+
   <url>
     <loc>https://sid.dev.br/PROJETOS.md</loc>
-    <lastmod>2026-06-15</lastmod>
-    <priority>0.7</priority>
+    <priority>0.80</priority>
   </url>
+
+  <url>
+    <loc>https://sid.dev.br/GITHUB.md</loc>
+    <priority>0.75</priority>
+  </url>
+
+  <url>
+    <loc>https://sid.dev.br/LIVROS-E-MUSICA.md</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://sid.dev.br/CONTATO.md</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://sid.dev.br/en/README.md</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://sid.dev.br/en/about.md</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://sid.dev.br/en/projects.md</loc>
+    <priority>0.70</priority>
+  </url>
+
+  <url>
+    <loc>https://sid.dev.br/en/github.md</loc>
+    <priority>0.65</priority>
+  </url>
+
+  <url>
+    <loc>https://sid.dev.br/en/books-and-music.md</loc>
+    <priority>0.60</priority>
+  </url>
+
+  <url>
+    <loc>https://sid.dev.br/en/contact.md</loc>
+    <priority>0.60</priority>
+  </url>
+
 </urlset>

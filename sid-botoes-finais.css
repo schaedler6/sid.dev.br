@@ -1,0 +1,85 @@
+/* =========================================================
+   SID - AJUSTE FINAL SOMENTE DOS 4 BOTÕES DO HERO
+   Não altera partículas, orbe, canvas-bg, preview.js ou preview.css.
+   ========================================================= */
+
+.hero .hero-cta-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, 285px) !important;
+  grid-auto-rows: 52px !important;
+  gap: 0.85rem !important;
+  width: 590px !important;
+  max-width: 590px !important;
+  margin-top: 1.8rem !important;
+  align-items: center !important;
+}
+
+.hero .hero-cta-grid a,
+.hero .hero-cta-grid .btn,
+.hero .hero-cta-grid a.btn,
+.hero .hero-cta-grid .primary,
+.hero .hero-cta-grid .secondary {
+  box-sizing: border-box !important;
+  width: 285px !important;
+  min-width: 285px !important;
+  max-width: 285px !important;
+
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+
+  padding: 0 1rem !important;
+  margin: 0 !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+
+  font-size: 0.76rem !important;
+  letter-spacing: 0.12em !important;
+}
+
+/* remove somente a bolinha azul dos botões do hero */
+.hero .hero-cta-grid a::before,
+.hero .hero-cta-grid a::after,
+.hero .hero-cta-grid .btn::before,
+.hero .hero-cta-grid .btn::after,
+.hero .hero-cta-grid .primary::before,
+.hero .hero-cta-grid .primary::after,
+.hero .hero-cta-grid .secondary::before,
+.hero .hero-cta-grid .secondary::after {
+  content: none !important;
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  background: none !important;
+  box-shadow: none !important;
+  border: 0 !important;
+  animation: none !important;
+}
+
+@media (max-width: 760px) {
+  .hero .hero-cta-grid {
+    grid-template-columns: 1fr !important;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .hero .hero-cta-grid a,
+  .hero .hero-cta-grid .btn,
+  .hero .hero-cta-grid a.btn,
+  .hero .hero-cta-grid .primary,
+  .hero .hero-cta-grid .secondary {
+    width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+}

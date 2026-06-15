@@ -1,33 +1,10 @@
-const phrases = [
-  "Tecnologia com identidade própria.",
-  "Cybersecurity, AI and automation.",
-  "Technology with a personal identity.",
-  "Technology with a personal identity."
-];
+const fixedHeroText = "Estudante de Análise e Desenvolvimento de Sistemas na Feevale, com foco principal em criação e desenvolvimento de sistemas.";
 
-let phraseIndex = 0;
-let charIndex = 0;
-let deleting = false;
 const typing = document.getElementById("typing");
 
-function typeWriter() {
-  const current = phrases[phraseIndex];
-
-  if (!deleting) {
-    typing.textContent = current.slice(0, charIndex++);
-    if (charIndex > current.length + 10) deleting = true;
-  } else {
-    typing.textContent = current.slice(0, charIndex--);
-    if (charIndex === 0) {
-      deleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-    }
-  }
-
-  setTimeout(typeWriter, deleting ? 35 : 70);
+if (typing) {
+  typing.textContent = fixedHeroText;
 }
-
-typeWriter();
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
@@ -319,4 +296,6 @@ drawParticles();
 })();
 
 // SID_END_PACMAN_GITHUB_JS_FORCE_20260612
+
+
 

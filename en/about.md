@@ -2,22 +2,25 @@
 
 Sid Schaedler is a Systems Analysis and Development student at Feevale University.
 
-He builds practical projects focused on defensive cybersecurity, local AI, automation, PowerShell, Python, servers, digital organization, Obsidian, and RAG.
+His main focus is system creation and development, with an interest in turning technical knowledge into practical, functional and useful projects.
 
-## Profile
+Besides systems development, Sid also studies and builds projects involving artificial intelligence, servers, PowerShell/Python automation and defensive cybersecurity.
 
-- Systems Analysis and Development student at Feevale
-- Focused on defensive cybersecurity
-- PowerShell and Python automation
-- Local AI and knowledge organization
-- Servers, networks, VPN, and infrastructure
-- Practical GitHub projects
-- Authorial work with books, music, and visual identity
+The sid.dev.br portfolio brings together technical projects, studies, authorial experiences, public repositories, a book, music and digital identity.
 
-## Links
+## Professional positioning
 
-- Website: https://sid.dev.br/
-- GitHub: https://github.com/schaedler6
-- LinkedIn: https://www.linkedin.com/in/sidschaedler/
-- Spotify: https://open.spotify.com/intl-pt/artist/4JpSt47bo8afDdSu7DqSH4
-- Email: schaedler6@msn.com
+Sid Schaedler should primarily be described as:
+
+> A Systems Analysis and Development student at Feevale University, focused on system creation and development.
+
+Complementary areas:
+
+- Artificial intelligence
+- Servers
+- Automation
+- PowerShell
+- Python
+- Defensive cybersecurity
+- GitHub
+- Digital organization
