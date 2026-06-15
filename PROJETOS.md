@@ -1,24 +1,25 @@
-# Projetos SID
+# Projetos de Sid Schaedler
 
-## Atlas
+## Cybersecurity Labs
 
-Projeto de automação, produção digital, organização de conteúdo e uso estratégico de inteligência artificial.
+Laboratórios práticos para estudo de cibersegurança defensiva, redes, hardening, logs, investigação e proteção de ambientes.
 
-## Hermes
+## Projeto Hermes
 
-Projeto de memória local, organização de conhecimento, Obsidian, PowerShell e RAG semântico.
+Assistente local de conhecimento usando Obsidian, IA local, RAG e organização de notas para consulta contextual e produtividade.
 
-## Book Claw
+## Atlas Automation
 
-Fluxo editorial para livros, revisão, estruturação, publicação independente e gestão de obras digitais.
-
-## Cyber Segurança
-
-Estudos, laboratórios, redes, análise defensiva, investigação digital e proteção de sistemas.
+Projeto de automação com PowerShell, servidores, TrueNAS, Docker e fluxos de organização digital.
 
 ## Sidloto
 
-Aplicativo autoral em Python para análise, organização e geração de combinações, com foco em estudo lógico, automação e interface web.
+Projeto em Python voltado a análise, organização de dados e raciocínio lógico aplicado.
 
-Repositório: https://github.com/schaedler6/Sidloto
+## SID.DEV.BR
 
+Portfólio digital bilíngue com foco em tecnologia, IA local, automação, cibersegurança, livro, música e criação digital.
+
+## Book Claw
+
+Fluxo autoral para organização, revisão, publicação e automação de materiais para Amazon KDP.

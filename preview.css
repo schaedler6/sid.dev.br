@@ -8284,162 +8284,150 @@ div#github-projects,
 /* SID_END_GALERIA_LAYOUT_FINAL_PROFISSIONAL_20260612 */
 
 
+/* =========================================================
+   SID FIX DEFINITIVO - BOTÕES HERO E CONTATO
+   ========================================================= */
 
-/* ============================================================
-   SID_START_GALERIA_APROVADA_4_FINAL_20260612
-   Galeria aprovada: somente 4 imagens
-   ============================================================ */
-
-#galeria.sid-gallery-approved-section {
-  scroll-margin-top: 130px !important;
-  padding-top: clamp(130px, 10vw, 170px) !important;
-  padding-left: clamp(38px, 6vw, 100px) !important;
-  padding-right: clamp(38px, 6vw, 100px) !important;
+/* Remove orbes, bolinhas e imagens decorativas de TODOS os botões */
+a.btn::before,
+a.btn::after,
+.btn::before,
+.btn::after,
+[class*="btn"]::before,
+[class*="btn"]::after,
+.github-clean-card a::before,
+.github-clean-card a::after,
+.project-premium-card a::before,
+.project-premium-card a::after,
+.contact a::before,
+.contact a::after,
+#contato a::before,
+#contato a::after,
+.actions a::before,
+.actions a::after,
+.hero-actions a::before,
+.hero-actions a::after {
+  content: none !important;
+  display: none !important;
+  background: none !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  width: 0 !important;
+  height: 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  transform: none !important;
+  animation: none !important;
 }
 
-#galeria .section-heading {
-  max-width: 1050px !important;
-  margin: 0 auto 60px !important;
-  text-align: center !important;
+a.btn img,
+.btn img,
+[class*="btn"] img,
+.github-clean-card a img,
+.project-premium-card a img,
+.contact a img,
+#contato a img {
+  display: none !important;
 }
 
-#galeria .section-heading h2 {
-  font-size: clamp(3.2rem, 5.7vw, 5.9rem) !important;
-  letter-spacing: -0.055em !important;
-  line-height: 0.95 !important;
-}
-
-#galeria .section-description {
-  max-width: 850px !important;
-  margin: 22px auto 0 !important;
-  color: rgba(255,255,255,0.68) !important;
-  line-height: 1.7 !important;
-}
-
-.sid-gallery-approved-grid {
-  width: min(1380px, 100%) !important;
-  max-width: 1380px !important;
-  margin: 0 auto !important;
-
+/* HERO: 4 botões iguais em grade 2x2 */
+.hero .hero-cta-grid {
   display: grid !important;
-  grid-template-columns: repeat(4, minmax(0, 1fr)) !important;
-  gap: 30px !important;
-  align-items: stretch !important;
+  grid-template-columns: repeat(2, 285px) !important;
+  gap: 0.85rem !important;
+  width: 590px !important;
+  max-width: 590px !important;
+  margin-top: 1.8rem !important;
+  align-items: center !important;
 }
 
-.sid-gallery-approved-card {
-  width: 100% !important;
-  max-width: 330px !important;
-  margin: 0 auto !important;
+.hero .hero-cta-grid .btn,
+.hero .hero-cta-grid a.btn {
+  width: 285px !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  padding: 0 1rem !important;
 
-  padding: 14px 14px 22px !important;
-  border-radius: 28px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
 
-  background:
-    linear-gradient(145deg, rgba(255,255,255,0.055), rgba(255,255,255,0.015)),
-    rgba(35, 18, 39, 0.78) !important;
+  text-align: center !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
 
-  border: 1px solid rgba(255,255,255,0.13) !important;
-
-  box-shadow:
-    0 24px 70px rgba(0,0,0,0.28),
-    inset 0 1px 0 rgba(255,255,255,0.08) !important;
-
-  overflow: hidden !important;
+  font-size: 0.76rem !important;
+  letter-spacing: 0.12em !important;
 }
 
-.sid-gallery-approved-card img {
-  width: 100% !important;
-  height: 420px !important;
-  object-fit: cover !important;
-  object-position: center !important;
-  border-radius: 20px !important;
-  display: block !important;
-  background: rgba(0,0,0,0.45) !important;
+/* CONTATO: e-mail maior, demais botões iguais */
+.contact-actions {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-wrap: wrap !important;
+  gap: 0.85rem !important;
+  max-width: 860px !important;
+  margin: 2.1rem auto 0 !important;
 }
 
-.sid-gallery-approved-card:nth-child(1) img {
-  object-position: center center !important;
+.contact-actions .btn,
+.contact-actions a.btn {
+  width: 160px !important;
+  height: 52px !important;
+  min-height: 52px !important;
+  max-height: 52px !important;
+  padding: 0 1rem !important;
+
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+
+  text-align: center !important;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+
+  font-size: 0.76rem !important;
+  letter-spacing: 0.12em !important;
 }
 
-.sid-gallery-approved-card:nth-child(2) img {
-  object-position: center top !important;
+.contact-actions .btn[href^="mailto:"],
+.contact-actions a.btn[href^="mailto:"] {
+  width: 300px !important;
 }
 
-.sid-gallery-approved-card:nth-child(3) img {
-  object-position: center center !important;
+/* Texto da seção contato */
+.contact .section-title p,
+#contato .section-title p {
+  max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  line-height: 1.65 !important;
 }
 
-.sid-gallery-approved-card:nth-child(4) img {
-  object-position: center center !important;
-}
-
-.sid-gallery-approved-tag {
-  display: block !important;
-  min-height: 34px !important;
-  margin: 16px 0 8px !important;
-
-  color: #d9b64c !important;
-  font-size: 0.70rem !important;
-  font-weight: 800 !important;
-  letter-spacing: 0.17em !important;
-  text-transform: uppercase !important;
-  line-height: 1.35 !important;
-}
-
-.sid-gallery-approved-card h3 {
-  color: #ffffff !important;
-  font-size: 1.02rem !important;
-  line-height: 1.25 !important;
-  margin: 0 !important;
-}
-
-.sid-gallery-approved-card:nth-child(3) h3 {
-  font-size: 0.95rem !important;
-}
-
-@media (max-width: 1280px) {
-  .sid-gallery-approved-grid {
-    gap: 24px !important;
-  }
-
-  .sid-gallery-approved-card {
-    max-width: 300px !important;
-  }
-
-  .sid-gallery-approved-card img {
-    height: 390px !important;
-  }
-}
-
-@media (max-width: 980px) {
-  .sid-gallery-approved-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
-  }
-
-  .sid-gallery-approved-card {
-    max-width: 340px !important;
-  }
-}
-
-@media (max-width: 620px) {
-  #galeria.sid-gallery-approved-section {
-    padding-left: 22px !important;
-    padding-right: 22px !important;
-  }
-
-  .sid-gallery-approved-grid {
+/* Mobile */
+@media (max-width: 760px) {
+  .hero .hero-cta-grid {
     grid-template-columns: 1fr !important;
-  }
-
-  .sid-gallery-approved-card {
+    width: 100% !important;
     max-width: 100% !important;
   }
 
-  .sid-gallery-approved-card img {
-    height: 390px !important;
+  .hero .hero-cta-grid .btn,
+  .hero .hero-cta-grid a.btn,
+  .contact-actions .btn,
+  .contact-actions a.btn,
+  .contact-actions .btn[href^="mailto:"],
+  .contact-actions a.btn[href^="mailto:"] {
+    width: 100% !important;
+  }
+
+  .contact-actions {
+    flex-direction: column !important;
+    align-items: stretch !important;
   }
 }
-
-/* SID_END_GALERIA_APROVADA_4_FINAL_20260612 */
-

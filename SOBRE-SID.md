@@ -1,25 +1,23 @@
 # Sobre Sid Schaedler
 
-Sid Schaedler é estudante de Cybersecurity e Análise e Desenvolvimento de Sistemas.
+Sid Schaedler é estudante de Análise e Desenvolvimento de Sistemas na Universidade Feevale.
 
-Seu portfólio digital apresenta uma combinação de tecnologia, automação, segurança, desenvolvimento, inteligência artificial e projetos autorais.
+Cria projetos práticos com foco em cibersegurança defensiva, IA local, automação, PowerShell, Python, servidores, organização digital, Obsidian e RAG.
 
-## Interesses técnicos
+## Perfil
 
-- Cybersecurity
-- Systems Development
-- Automation
-- AI
-- PowerShell
-- Python
-- GitHub
-- Infrastructure
-- Technical Support
-- Knowledge Management
+- Estudante de ADS na Feevale
+- Foco em cibersegurança defensiva
+- Automação com PowerShell e Python
+- IA local e organização de conhecimento
+- Servidores, redes, VPN e infraestrutura
+- Projetos práticos no GitHub
+- Criação autoral com livro, música e identidade visual
 
-## Projetos autorais
+## Links
 
-Além da área técnica, Sid também desenvolve projetos criativos ligados a livros, música, identidade visual e canais digitais.
-
-O objetivo do site é apresentar um ecossistema profissional e autoral, com foco em aprendizado, construção técnica e presença digital.
-
+- Site: https://sid.dev.br/
+- GitHub: https://github.com/schaedler6
+- LinkedIn: https://www.linkedin.com/in/sidschaedler/
+- Spotify: https://open.spotify.com/intl-pt/artist/4JpSt47bo8afDdSu7DqSH4
+- E-mail: schaedler6@msn.com
