@@ -472,6 +472,48 @@ a.btn::after,
   }
 }
 </style>
+<style id="sid-canvas-bg-visivel">
+/* =========================================================
+   SID — TORNAR VISÍVEL O CANVAS ORIGINAL DAS PARTÍCULAS
+   Não cria partículas novas.
+   Não mexe em preview.js.
+   Não mexe em preview.css.
+   ========================================================= */
+
+#canvas-bg {
+  position: fixed !important;
+  inset: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  display: block !important;
+  pointer-events: none !important;
+  z-index: 1 !important;
+  opacity: 0.9 !important;
+}
+
+/* Mantém o conteúdo acima das partículas */
+header,
+nav,
+main,
+section,
+footer,
+.hero,
+.hero-content,
+.hero-visual,
+.navbar,
+.site-header {
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+/* Garante que o orbe continue acima do canvas */
+.hero-orbisite-alpha-video,
+.hero-visual video,
+.hero-visual img {
+  position: relative !important;
+  z-index: 3 !important;
+}
+</style>
 </head>
 <body>
 
@@ -2882,6 +2924,7 @@ a.btn::after,
   <script src="preview.js?v=pacman-github-force-20260612"></script>
 </body>
 </html>
+
 
 
 
