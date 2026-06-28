@@ -514,48 +514,6 @@ footer,
   z-index: 3 !important;
 }
 </style>
-
-<style id="sid-qa-github-link-style">
-/* =========================================================
-   SID — LINKS DOS CARDS QA
-   Corrige o link azul padrão do navegador.
-   Não mexe em partículas, canvas, orbe ou preview.js.
-========================================================= */
-
-.project-content .project-cta {
-  margin-top: 18px;
-}
-
-.project-content .project-github-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: fit-content;
-  padding: 10px 16px;
-  border: 1px solid rgba(0, 245, 255, 0.45);
-  border-radius: 999px;
-  background: rgba(0, 245, 255, 0.08);
-  color: #00f5ff !important;
-  text-decoration: none !important;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: 0 0 18px rgba(0, 245, 255, 0.12);
-  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-content .project-github-link:hover,
-.project-content .project-github-link:focus {
-  transform: translateY(-2px);
-  border-color: rgba(0, 245, 255, 0.9);
-  background: rgba(0, 245, 255, 0.16);
-  box-shadow: 0 0 24px rgba(0, 245, 255, 0.28);
-  outline: none;
-}
-</style>
-
 </head>
 <body>
 
@@ -636,7 +594,7 @@ footer,
               <span>Regressão</span>
               <span>Evidências</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/01-testes-manuais" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/01-testes-manuais" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
           </div>
         </article>
 
@@ -652,7 +610,7 @@ footer,
               <span>Severidade</span>
               <span>Reprodução</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/02-bug-reports" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/02-bug-reports" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
           </div>
         </article>
 
@@ -668,7 +626,7 @@ footer,
               <span>JSON</span>
               <span>Status Codes</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/03-testes-api" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/03-testes-api" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
           </div>
         </article>
 
@@ -684,7 +642,7 @@ footer,
               <span>Automação</span>
               <span>Validação</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/04-automacao-qa" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/04-automacao-qa" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
           </div>
         </article>
 
@@ -700,7 +658,7 @@ footer,
               <span>Contraste</span>
               <span>Layout</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/05-visual-qa" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/05-visual-qa" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
           </div>
         </article>
 
@@ -716,7 +674,7 @@ footer,
               <span>Logs</span>
               <span>Permissões</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/06-qa-seguranca-defensiva" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/06-qa-seguranca-defensiva" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
           </div>
         </article>
       </div>
@@ -3075,7 +3033,6 @@ footer,
   <script src="preview.js?v=typing-pt-ads-20260615-1538"></script>
 </body>
 </html>
-
 
 
 

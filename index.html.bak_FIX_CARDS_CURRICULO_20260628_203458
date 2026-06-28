@@ -514,48 +514,6 @@ footer,
   z-index: 3 !important;
 }
 </style>
-
-<style id="sid-qa-github-link-style">
-/* =========================================================
-   SID — LINKS DOS CARDS QA
-   Corrige o link azul padrão do navegador.
-   Não mexe em partículas, canvas, orbe ou preview.js.
-========================================================= */
-
-.project-content .project-cta {
-  margin-top: 18px;
-}
-
-.project-content .project-github-link {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  width: fit-content;
-  padding: 10px 16px;
-  border: 1px solid rgba(0, 245, 255, 0.45);
-  border-radius: 999px;
-  background: rgba(0, 245, 255, 0.08);
-  color: #00f5ff !important;
-  text-decoration: none !important;
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  box-shadow: 0 0 18px rgba(0, 245, 255, 0.12);
-  transition: transform 0.2s ease, border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-}
-
-.project-content .project-github-link:hover,
-.project-content .project-github-link:focus {
-  transform: translateY(-2px);
-  border-color: rgba(0, 245, 255, 0.9);
-  background: rgba(0, 245, 255, 0.16);
-  box-shadow: 0 0 24px rgba(0, 245, 255, 0.28);
-  outline: none;
-}
-</style>
-
 </head>
 <body>
 
@@ -612,7 +570,6 @@ footer,
         </div>
       </div>
     </section>
-
     <section id="qa" class="section projects projects-premium">
       <div class="section-heading reveal">
         <span>PORTFÓLIO QA</span>
@@ -624,7 +581,7 @@ footer,
       </div>
 
       <div class="projects-premium-grid">
-        <article class="project-premium-card reveal project-featured" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/01-testes-manuais','_blank','noopener')">
+        <article class="project-premium-card reveal project-featured">
           <div class="project-number">QA 01</div>
           <div class="project-content">
             <span class="project-type">Testes Manuais • Regressão • Evidências</span>
@@ -636,11 +593,11 @@ footer,
               <span>Regressão</span>
               <span>Evidências</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/01-testes-manuais" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/01-testes-manuais" target="_blank" rel="noopener">Abrir projeto no GitHub</a></p>
           </div>
         </article>
 
-        <article class="project-premium-card reveal" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/02-bug-reports','_blank','noopener')">
+        <article class="project-premium-card reveal">
           <div class="project-number">QA 02</div>
           <div class="project-content">
             <span class="project-type">Bugs • Documentação • Severidade</span>
@@ -652,11 +609,11 @@ footer,
               <span>Severidade</span>
               <span>Reprodução</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/02-bug-reports" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/02-bug-reports" target="_blank" rel="noopener">Abrir projeto no GitHub</a></p>
           </div>
         </article>
 
-        <article class="project-premium-card reveal" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/03-testes-api','_blank','noopener')">
+        <article class="project-premium-card reveal">
           <div class="project-number">QA 03</div>
           <div class="project-content">
             <span class="project-type">API • REST • JSON • Postman</span>
@@ -668,11 +625,11 @@ footer,
               <span>JSON</span>
               <span>Status Codes</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/03-testes-api" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/03-testes-api" target="_blank" rel="noopener">Abrir projeto no GitHub</a></p>
           </div>
         </article>
 
-        <article class="project-premium-card reveal" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/04-automacao-qa','_blank','noopener')">
+        <article class="project-premium-card reveal">
           <div class="project-number">QA 04</div>
           <div class="project-content">
             <span class="project-type">Python • PowerShell • Automação</span>
@@ -684,11 +641,11 @@ footer,
               <span>Automação</span>
               <span>Validação</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/04-automacao-qa" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/04-automacao-qa" target="_blank" rel="noopener">Abrir projeto no GitHub</a></p>
           </div>
         </article>
 
-        <article class="project-premium-card reveal" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/05-visual-qa','_blank','noopener')">
+        <article class="project-premium-card reveal">
           <div class="project-number">QA 05</div>
           <div class="project-content">
             <span class="project-type">Visual QA • Responsividade • Interface</span>
@@ -700,11 +657,11 @@ footer,
               <span>Contraste</span>
               <span>Layout</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/05-visual-qa" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/05-visual-qa" target="_blank" rel="noopener">Abrir projeto no GitHub</a></p>
           </div>
         </article>
 
-        <article class="project-premium-card reveal" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/06-qa-seguranca-defensiva','_blank','noopener')">
+        <article class="project-premium-card reveal">
           <div class="project-number">QA 06</div>
           <div class="project-content">
             <span class="project-type">QA • Segurança Defensiva • Boas Práticas</span>
@@ -716,12 +673,11 @@ footer,
               <span>Logs</span>
               <span>Permissões</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/06-qa-seguranca-defensiva" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p><a href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/06-qa-seguranca-defensiva" target="_blank" rel="noopener">Abrir projeto no GitHub</a></p>
           </div>
         </article>
       </div>
     </section>
-
 <section id="projetos" class="section projects projects-premium">
       <div class="section-heading reveal">
         <span>PORTFÓLIO TÉCNICO</span>
@@ -3075,8 +3031,6 @@ footer,
   <script src="preview.js?v=typing-pt-ads-20260615-1538"></script>
 </body>
 </html>
-
-
 
 
 
