@@ -1,0 +1,19 @@
+[build]
+  publish = "."
+  command = ""
+
+# Configuração preparada para espelho gratuito na Netlify.
+# Objetivo: permitir que Meta/Facebook/WhatsApp leiam o site sem depender do domínio sid.dev.br.
+# Importante: o domínio Netlify NÃO deve redirecionar para sid.dev.br.
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "all"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Content-Type-Options = "nosniff"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
