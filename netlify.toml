@@ -6,6 +6,10 @@
 # Objetivo: permitir que Meta/Facebook/WhatsApp leiam o site sem depender do domínio sid.dev.br.
 # Importante: o domínio Netlify NÃO deve redirecionar para sid.dev.br.
 
+[[edge_functions]]
+  path = "/*"
+  function = "og-injector"
+
 [[headers]]
   for = "/*"
   [headers.values]
