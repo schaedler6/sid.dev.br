@@ -8912,7 +8912,7 @@ nav a:focus-visible {
       position: absolute !important;
       left: 50% !important;
       top: 50% !important;
-      transform: translate(-50%, -50%) !important;
+      transform: translate(-50%, -50%);
 
       width: min(230px, 54vw) !important;
       height: min(230px, 54vw) !important;
@@ -8933,7 +8933,7 @@ nav a:focus-visible {
         inset -22px -26px 44px rgba(0, 0, 0, 0.48),
         inset 14px 12px 22px rgba(255, 255, 255, 0.24) !important;
 
-      filter: saturate(1.18) contrast(1.08) !important;
+      filter: saturate(1.18) contrast(1.08);
     }
 
     .hero-orbisite-alpha-wrap::after {
@@ -8941,7 +8941,7 @@ nav a:focus-visible {
       position: absolute !important;
       left: 50% !important;
       top: 50% !important;
-      transform: translate(-50%, -50%) rotate(-18deg) !important;
+      transform: translate(-50%, -50%) rotate(-18deg);
 
       width: min(270px, 64vw) !important;
       height: min(72px, 18vw) !important;
@@ -8950,11 +8950,122 @@ nav a:focus-visible {
       border-top: 3px solid rgba(145, 232, 255, 0.70) !important;
       border-bottom: 2px solid rgba(0, 217, 255, 0.22) !important;
       filter: drop-shadow(0 0 18px rgba(0, 217, 255, 0.34)) !important;
-      opacity: 0.88 !important;
+      opacity: 0.88;
     }
   }
 }
 
 /* SID_END_MOBILE_POLISH_MENU_ORBI_20260708 */
 
+/* SID_START_IOS_ORBI_CSS_ANIMATION_20260709
+   Anima o fallback CSS do Orbi no iPhone sem reativar o WebM com fundo preto.
+*/
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 1000px) {
+    .hero-orbisite-alpha-wrap::before {
+      animation: sid-ios-orbi-glow 4.8s ease-in-out infinite alternate !important;
+      transform-origin: center center !important;
+    }
+
+    .hero-orbisite-alpha-wrap::after {
+      animation: sid-ios-orbi-ring 8.5s linear infinite !important;
+      transform-origin: center center !important;
+    }
+  }
+
+  @keyframes sid-ios-orbi-glow {
+    0% {
+      transform: translate(-50%, -50%) scale(0.985) !important;
+      filter: saturate(1.12) contrast(1.04) brightness(0.98) !important;
+      opacity: 0.92 !important;
+    }
+
+    50% {
+      transform: translate(-50%, -50%) scale(1.018) !important;
+      filter: saturate(1.30) contrast(1.10) brightness(1.08) !important;
+      opacity: 1 !important;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(1.032) !important;
+      filter: saturate(1.22) contrast(1.08) brightness(1.03) !important;
+      opacity: 0.96 !important;
+    }
+  }
+
+  @keyframes sid-ios-orbi-ring {
+    0% {
+      transform: translate(-50%, -50%) rotate(-18deg) scaleX(1) !important;
+      opacity: 0.72 !important;
+    }
+
+    50% {
+      transform: translate(-50%, -50%) rotate(162deg) scaleX(1.05) !important;
+      opacity: 0.95 !important;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) rotate(342deg) scaleX(1) !important;
+      opacity: 0.72 !important;
+    }
+  }
+}
+/* SID_END_IOS_ORBI_CSS_ANIMATION_20260709 */
+
+/* SID_START_IOS_ORBI_CSS_ANIMATION_20260709
+   Anima o fallback CSS do Orbi no iPhone sem reativar o WebM com fundo preto.
+*/
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 1000px) {
+    .hero-orbisite-alpha-wrap::before {
+      animation: sid-ios-orbi-glow 4.8s ease-in-out infinite alternate !important;
+      transform-origin: center center !important;
+      will-change: transform, filter, opacity;
+    }
+
+    .hero-orbisite-alpha-wrap::after {
+      animation: sid-ios-orbi-ring 8.5s linear infinite !important;
+      transform-origin: center center !important;
+      will-change: transform, opacity;
+    }
+  }
+
+  @keyframes sid-ios-orbi-glow {
+    0% {
+      transform: translate(-50%, -50%) scale(0.985);
+      filter: saturate(1.12) contrast(1.04) brightness(0.98);
+      opacity: 0.92;
+    }
+
+    50% {
+      transform: translate(-50%, -50%) scale(1.018);
+      filter: saturate(1.30) contrast(1.10) brightness(1.08);
+      opacity: 1;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) scale(1.032);
+      filter: saturate(1.22) contrast(1.08) brightness(1.03);
+      opacity: 0.96;
+    }
+  }
+
+  @keyframes sid-ios-orbi-ring {
+    0% {
+      transform: translate(-50%, -50%) rotate(-18deg) scaleX(1);
+      opacity: 0.72;
+    }
+
+    50% {
+      transform: translate(-50%, -50%) rotate(162deg) scaleX(1.05);
+      opacity: 0.95;
+    }
+
+    100% {
+      transform: translate(-50%, -50%) rotate(342deg) scaleX(1);
+      opacity: 0.72;
+    }
+  }
+}
+/* SID_END_IOS_ORBI_CSS_ANIMATION_20260709 */
 
