@@ -8891,3 +8891,21 @@ nav a:focus-visible {
 
 /* SID_END_MOBILE_A11Y_PERF_20260708 */
 
+/* SID_START_IOS_ORBI_BLACK_BG_FIX_20260708
+   iPhone/iOS: reduz fundo preto causado por WebM com alpha.
+   Não altera o desktop.
+*/
+@supports (-webkit-touch-callout: none) {
+  @media (max-width: 1000px) {
+    .hero-orbisite-alpha-wrap,
+    .hero-orbisite-alpha-video {
+      background: transparent !important;
+    }
+
+    .hero-orbisite-alpha-video {
+      mix-blend-mode: screen !important;
+    }
+  }
+}
+/* SID_END_IOS_ORBI_BLACK_BG_FIX_20260708 */
+
