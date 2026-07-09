@@ -8957,54 +8957,18 @@ nav a:focus-visible {
 
 /* SID_END_MOBILE_POLISH_MENU_ORBI_20260708 */
 
-
-
-
-
-
-
-/* SID_START_IOS_ORBI_SVG_ANIMATED_20260709
-   iPhone: usa SVG animado transparente no lugar do WebM e do fallback CSS estático.
+/* SID_START_MOBILE_HIDE_ORBI_20260709
+   Mobile/iPhone: remove o Orbi da primeira dobra.
+   Desktop preservado.
 */
-.hero-orbisite-ios-svg {
-  display: none;
-}
+@media (max-width: 1000px) {
+  .hero-visual {
+    display: none !important;
+  }
 
-@supports (-webkit-touch-callout: none) {
-  @media (max-width: 1000px) {
-    .hero-orbisite-alpha-video {
-      display: none !important;
-      visibility: hidden !important;
-      opacity: 0 !important;
-    }
-
-    .hero-orbisite-alpha-wrap::before,
-    .hero-orbisite-alpha-wrap::after {
-      content: none !important;
-      display: none !important;
-      animation: none !important;
-    }
-
-    .hero-orbisite-alpha-wrap {
-      width: min(360px, 86vw) !important;
-      height: min(360px, 86vw) !important;
-      margin: 18px auto 0 !important;
-      background: transparent !important;
-      border: none !important;
-      box-shadow: none !important;
-      overflow: visible !important;
-    }
-
-    .hero-orbisite-ios-svg {
-      display: block !important;
-      width: 100% !important;
-      height: auto !important;
-      margin: 0 auto !important;
-      background: transparent !important;
-    }
+  .hero {
+    padding-bottom: 42px !important;
   }
 }
-/* SID_END_IOS_ORBI_SVG_ANIMATED_20260709 */
-
-
+/* SID_END_MOBILE_HIDE_ORBI_20260709 */
 
