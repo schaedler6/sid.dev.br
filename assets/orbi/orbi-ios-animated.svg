@@ -1,0 +1,89 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 360" width="360" height="360">
+  <defs>
+    <radialGradient id="orbGrad" cx="32%" cy="28%" r="72%">
+      <stop offset="0%" stop-color="#ffffff" stop-opacity="0.95"/>
+      <stop offset="10%" stop-color="#9ff6ff" stop-opacity="0.92"/>
+      <stop offset="34%" stop-color="#00aaff" stop-opacity="0.88"/>
+      <stop offset="62%" stop-color="#004d9b" stop-opacity="0.96"/>
+      <stop offset="100%" stop-color="#000716" stop-opacity="0.98"/>
+    </radialGradient>
+
+    <filter id="glow" x="-60%" y="-60%" width="220%" height="220%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feColorMatrix in="blur" type="matrix"
+        values="0 0 0 0 0
+                0 0 0 0 0.78
+                0 0 0 0 1
+                0 0 0 0.65 0"/>
+      <feMerge>
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <style>
+      .orb-float {
+        transform-origin: 180px 180px;
+        animation: sidFloat 2.6s ease-in-out infinite;
+      }
+
+      .orb-body {
+        transform-origin: 180px 180px;
+        animation: sidPulse 1.9s ease-in-out infinite alternate;
+      }
+
+      .orb-ring {
+        transform-origin: 180px 180px;
+        animation: sidRing 3.2s linear infinite;
+      }
+
+      .orb-dot {
+        transform-origin: 180px 180px;
+        animation: sidDot 3.2s linear infinite;
+      }
+
+      @keyframes sidFloat {
+        0% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(-16px) scale(1.018); }
+        100% { transform: translateY(0px) scale(1); }
+      }
+
+      @keyframes sidPulse {
+        0% { transform: scale(0.96); opacity: 0.88; filter: saturate(1.0) brightness(0.92); }
+        100% { transform: scale(1.045); opacity: 1; filter: saturate(1.35) brightness(1.16); }
+      }
+
+      @keyframes sidRing {
+        0% { transform: rotate(-18deg); opacity: 0.60; }
+        50% { transform: rotate(162deg); opacity: 1; }
+        100% { transform: rotate(342deg); opacity: 0.60; }
+      }
+
+      @keyframes sidDot {
+        0% { transform: rotate(-18deg); opacity: 0.65; }
+        50% { transform: rotate(162deg); opacity: 1; }
+        100% { transform: rotate(342deg); opacity: 0.65; }
+      }
+    </style>
+  </defs>
+
+  <g class="orb-float" filter="url(#glow)">
+    <circle cx="180" cy="180" r="118" fill="#00d9ff" opacity="0.20"/>
+    <circle class="orb-body" cx="180" cy="180" r="96" fill="url(#orbGrad)"/>
+
+    <ellipse class="orb-ring"
+      cx="180" cy="180" rx="140" ry="38"
+      fill="none"
+      stroke="#8df3ff"
+      stroke-width="4"
+      stroke-opacity="0.82"/>
+
+    <circle class="orb-dot"
+      cx="318" cy="180" r="7"
+      fill="#ffffff"
+      opacity="0.95"/>
+
+    <circle cx="125" cy="120" r="24" fill="#ffffff" opacity="0.55"/>
+    <circle cx="126" cy="121" r="43" fill="#7ef3ff" opacity="0.14"/>
+  </g>
+</svg>

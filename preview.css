@@ -8961,92 +8961,50 @@ nav a:focus-visible {
 
 
 
-/* SID_START_IOS_ORBI_VISIBLE_MOTION_20260709
-   Movimento visível para o Orbi CSS no iPhone: flutuação, pulso e anel com ponto luminoso.
+
+
+/* SID_START_IOS_ORBI_SVG_ANIMATED_20260709
+   iPhone: usa SVG animado transparente no lugar do WebM e do fallback CSS estático.
 */
+.hero-orbisite-ios-svg {
+  display: none;
+}
+
 @supports (-webkit-touch-callout: none) {
   @media (max-width: 1000px) {
-    .hero-orbisite-alpha-wrap {
-      -webkit-animation: sid-ios-orbi-float-visible 2.6s ease-in-out infinite !important;
-      animation: sid-ios-orbi-float-visible 2.6s ease-in-out infinite !important;
-      will-change: transform !important;
+    .hero-orbisite-alpha-video {
+      display: none !important;
+      visibility: hidden !important;
+      opacity: 0 !important;
     }
 
-    .hero-orbisite-alpha-wrap::before {
-      -webkit-animation: sid-ios-orbi-pulse-visible 1.9s ease-in-out infinite alternate !important;
-      animation: sid-ios-orbi-pulse-visible 1.9s ease-in-out infinite alternate !important;
-      will-change: transform, filter, opacity !important;
-    }
-
+    .hero-orbisite-alpha-wrap::before,
     .hero-orbisite-alpha-wrap::after {
-      background:
-        radial-gradient(circle at 92% 50%,
-          rgba(255, 255, 255, 0.98) 0 4px,
-          rgba(0, 234, 255, 0.78) 5px,
-          rgba(0, 234, 255, 0.00) 10px) !important;
-
-      -webkit-animation: sid-ios-orbi-ring-visible 3.2s linear infinite !important;
-      animation: sid-ios-orbi-ring-visible 3.2s linear infinite !important;
-      will-change: transform, opacity !important;
-    }
-  }
-
-  @-webkit-keyframes sid-ios-orbi-float-visible {
-    0%   { transform: translateY(0) scale(1); }
-    50%  { transform: translateY(-14px) scale(1.018); }
-    100% { transform: translateY(0) scale(1); }
-  }
-
-  @keyframes sid-ios-orbi-float-visible {
-    0%   { transform: translateY(0) scale(1); }
-    50%  { transform: translateY(-14px) scale(1.018); }
-    100% { transform: translateY(0) scale(1); }
-  }
-
-  @-webkit-keyframes sid-ios-orbi-pulse-visible {
-    0% {
-      transform: translate(-50%, -50%) scale(0.97);
-      filter: saturate(1.05) contrast(1.02) brightness(0.92);
-      opacity: 0.88;
+      content: none !important;
+      display: none !important;
+      animation: none !important;
     }
 
-    100% {
-      transform: translate(-50%, -50%) scale(1.045);
-      filter: saturate(1.36) contrast(1.14) brightness(1.16);
-      opacity: 1;
-    }
-  }
-
-  @keyframes sid-ios-orbi-pulse-visible {
-    0% {
-      transform: translate(-50%, -50%) scale(0.97);
-      filter: saturate(1.05) contrast(1.02) brightness(0.92);
-      opacity: 0.88;
+    .hero-orbisite-alpha-wrap {
+      width: min(360px, 86vw) !important;
+      height: min(360px, 86vw) !important;
+      margin: 18px auto 0 !important;
+      background: transparent !important;
+      border: none !important;
+      box-shadow: none !important;
+      overflow: visible !important;
     }
 
-    100% {
-      transform: translate(-50%, -50%) scale(1.045);
-      filter: saturate(1.36) contrast(1.14) brightness(1.16);
-      opacity: 1;
+    .hero-orbisite-ios-svg {
+      display: block !important;
+      width: 100% !important;
+      height: auto !important;
+      margin: 0 auto !important;
+      background: transparent !important;
     }
-  }
-
-  @-webkit-keyframes sid-ios-orbi-ring-visible {
-    0%   { transform: translate(-50%, -50%) rotate(-18deg) scaleX(1); opacity: 0.55; }
-    25%  { transform: translate(-50%, -50%) rotate(72deg) scaleX(1.08); opacity: 1; }
-    50%  { transform: translate(-50%, -50%) rotate(162deg) scaleX(0.96); opacity: 0.72; }
-    75%  { transform: translate(-50%, -50%) rotate(252deg) scaleX(1.10); opacity: 1; }
-    100% { transform: translate(-50%, -50%) rotate(342deg) scaleX(1); opacity: 0.55; }
-  }
-
-  @keyframes sid-ios-orbi-ring-visible {
-    0%   { transform: translate(-50%, -50%) rotate(-18deg) scaleX(1); opacity: 0.55; }
-    25%  { transform: translate(-50%, -50%) rotate(72deg) scaleX(1.08); opacity: 1; }
-    50%  { transform: translate(-50%, -50%) rotate(162deg) scaleX(0.96); opacity: 0.72; }
-    75%  { transform: translate(-50%, -50%) rotate(252deg) scaleX(1.10); opacity: 1; }
-    100% { transform: translate(-50%, -50%) rotate(342deg) scaleX(1); opacity: 0.55; }
   }
 }
-/* SID_END_IOS_ORBI_VISIBLE_MOTION_20260709 */
+/* SID_END_IOS_ORBI_SVG_ANIMATED_20260709 */
+
 
 
