@@ -1,4 +1,4 @@
-const fixedHeroText = "Estudante de Análise e Desenvolvimento de Sistemas na Feevale, com foco principal em criação e desenvolvimento de sistemas.";
+const fixedHeroText = "QA Júnior em Formação";
 
 const typing = document.getElementById("typing");
 
@@ -300,3 +300,34 @@ drawParticles();
 
 
 
+
+
+/* SID_START_KEYBOARD_CARDS_20260709 */
+
+(function sidKeyboardProjectCards() {
+  const cards = document.querySelectorAll(
+    '.project-premium-card[role="link"][tabindex="0"]'
+  );
+
+  cards.forEach((card) => {
+    const heading = card.querySelector("h3");
+
+    if (!card.hasAttribute("aria-label") && heading) {
+      card.setAttribute(
+        "aria-label",
+        `Abrir projeto: ${heading.textContent.trim()}`
+      );
+    }
+
+    card.addEventListener("keydown", (event) => {
+      if (event.target !== card) return;
+
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        card.click();
+      }
+    });
+  });
+})();
+
+/* SID_END_KEYBOARD_CARDS_20260709 */
