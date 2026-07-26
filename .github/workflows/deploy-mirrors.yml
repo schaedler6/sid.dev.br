@@ -98,6 +98,9 @@ jobs:
 
           npx --yes netlify-cli@27.0.0 deploy \
             --prod \
+            --no-build \
+            --site "${NETLIFY_SITE_ID}" \
+            --auth "${NETLIFY_AUTH_TOKEN}" \
             --dir "${PUBLISH_DIR}" \
             --message "GitHub Actions: ${GITHUB_SHA}"
 
@@ -121,10 +124,25 @@ jobs:
         run: |
           set -euo pipefail
 
-          npx --yes wrangler@4.114.0 pages deploy "${PUBLISH_DIR}" \
-            --project-name "siddevbr-cloud-mirror" \
-            --branch "main" \
-            --commit-hash "${GITHUB_SHA}"
+          for tentativa in 1 2 3 4; do
+            echo "Tentativa ${tentativa} de 4 para publicar no Cloudflare Pages"
+
+            if npx --yes wrangler@4.114.0 pages deploy "${PUBLISH_DIR}" \
+              --project-name "siddevbr-cloud-mirror" \
+              --branch "main" \
+              --commit-hash "${GITHUB_SHA}"; then
+              exit 0
+            fi
+
+            if [ "${tentativa}" -eq 4 ]; then
+              echo "Falha definitiva após 4 tentativas." >&2
+              exit 1
+            fi
+
+            espera=$((tentativa * 15))
+            echo "Falha transitória. Nova tentativa em ${espera} segundos."
+            sleep "${espera}"
+          done
 
       - name: Verificar endereço publicado
         shell: bash
