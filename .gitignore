@@ -17,3 +17,5 @@ _security_audit*/
 *.tmp
 .DS_Store
 Thumbs.db
+
+.netlify
