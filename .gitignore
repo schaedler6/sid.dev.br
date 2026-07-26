@@ -19,3 +19,4 @@ _security_audit*/
 Thumbs.db
 
 .netlify
+.wrangler/
