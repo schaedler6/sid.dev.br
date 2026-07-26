@@ -8,23 +8,17 @@ on:
 
 permissions:
   contents: read
+  deployments: write
 
 concurrency:
   group: deploy-mirrors-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
-  deploy:
-    name: Publicar em ${{ matrix.target }}
+  netlify:
+    name: Publicar em netlify
     runs-on: ubuntu-latest
     timeout-minutes: 20
-
-    strategy:
-      fail-fast: false
-      matrix:
-        target:
-          - netlify
-          - cloudflare
 
     steps:
       - name: Baixar o repositório
@@ -33,7 +27,7 @@ jobs:
       - name: Configurar Node.js
         uses: actions/setup-node@v6
         with:
-          node-version: "24"
+          node-version: "22"
           package-manager-cache: false
 
       - name: Preparar cópia pública limpa
@@ -41,14 +35,15 @@ jobs:
         run: |
           set -euo pipefail
 
-          PUBLISH_DIR="${RUNNER_TEMP}/sid-dev-br-public"
-          mkdir -p "${PUBLISH_DIR}"
+          rm -rf .deploy
+          mkdir -p .deploy/site
 
           rsync -a \
             --exclude=".git/" \
             --exclude=".github/" \
             --exclude=".netlify/" \
             --exclude=".wrangler/" \
+            --exclude=".deploy/" \
             --exclude="node_modules/" \
             --exclude="_backup*/" \
             --exclude="_teste*/" \
@@ -57,27 +52,18 @@ jobs:
             --exclude=".env" \
             --exclude=".env.*" \
             --exclude="CNAME" \
-            ./ "${PUBLISH_DIR}/"
+            ./ .deploy/site/
 
-          test -f "${PUBLISH_DIR}/index.html"
-          test -f "${PUBLISH_DIR}/preview.css"
-          test -f "${PUBLISH_DIR}/preview.js"
-          test -d "${PUBLISH_DIR}/assets"
-          test ! -e "${PUBLISH_DIR}/CNAME"
-          test ! -d "${PUBLISH_DIR}/.git"
-          test ! -d "${PUBLISH_DIR}/.github"
-          test ! -d "${PUBLISH_DIR}/.netlify"
-          test ! -d "${PUBLISH_DIR}/.wrangler"
+          test -f .deploy/site/index.html
+          test -f .deploy/site/preview.css
+          test -f .deploy/site/preview.js
+          test -d .deploy/site/assets
+          test ! -e .deploy/site/CNAME
 
-          echo "PUBLISH_DIR=${PUBLISH_DIR}" >> "${GITHUB_ENV}"
+          echo "Total de arquivos preparados:"
+          find .deploy/site -type f | wc -l
 
-          echo "Arquivos preparados para publicação:"
-          find "${PUBLISH_DIR}" -type f | sort
-          echo "Total de arquivos:"
-          find "${PUBLISH_DIR}" -type f | wc -l
-
-      - name: Validar credenciais do Netlify
-        if: matrix.target == 'netlify'
+      - name: Vincular projeto Netlify no runner
         shell: bash
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -87,8 +73,10 @@ jobs:
           test -n "${NETLIFY_AUTH_TOKEN}"
           test -n "${NETLIFY_SITE_ID}"
 
+          mkdir -p .netlify
+          printf '{"siteId":"%s"}\n' "${NETLIFY_SITE_ID}" > .netlify/state.json
+
       - name: Publicar no Netlify
-        if: matrix.target == 'netlify'
         shell: bash
         env:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
@@ -99,13 +87,78 @@ jobs:
           npx --yes netlify-cli@27.0.0 deploy \
             --prod \
             --no-build \
-            --site "${NETLIFY_SITE_ID}" \
+            --dir .deploy/site \
             --auth "${NETLIFY_AUTH_TOKEN}" \
-            --dir "${PUBLISH_DIR}" \
             --message "GitHub Actions: ${GITHUB_SHA}"
 
+      - name: Verificar Netlify publicado
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          curl \
+            --fail \
+            --location \
+            --silent \
+            --show-error \
+            --retry 5 \
+            --retry-delay 5 \
+            --retry-all-errors \
+            "https://siddevbr-mirror.netlify.app/?commit=${GITHUB_SHA}" \
+            --output /tmp/netlify.html
+
+          grep -qi "<html" /tmp/netlify.html
+          echo "Publicação Netlify confirmada."
+
+  cloudflare:
+    name: Publicar em cloudflare
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+
+    steps:
+      - name: Baixar o repositório
+        uses: actions/checkout@v6
+
+      - name: Configurar Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "22"
+          package-manager-cache: false
+
+      - name: Preparar cópia pública limpa
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          rm -rf .deploy
+          mkdir -p .deploy/site
+
+          rsync -a \
+            --exclude=".git/" \
+            --exclude=".github/" \
+            --exclude=".netlify/" \
+            --exclude=".wrangler/" \
+            --exclude=".deploy/" \
+            --exclude="node_modules/" \
+            --exclude="_backup*/" \
+            --exclude="_teste*/" \
+            --exclude="*.log" \
+            --exclude="*.tmp" \
+            --exclude=".env" \
+            --exclude=".env.*" \
+            --exclude="CNAME" \
+            ./ .deploy/site/
+
+          test -f .deploy/site/index.html
+          test -f .deploy/site/preview.css
+          test -f .deploy/site/preview.js
+          test -d .deploy/site/assets
+          test ! -e .deploy/site/CNAME
+
+          echo "Total de arquivos preparados:"
+          find .deploy/site -type f | wc -l
+
       - name: Validar credenciais da Cloudflare
-        if: matrix.target == 'cloudflare'
         shell: bash
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
@@ -116,46 +169,22 @@ jobs:
           test -n "${CLOUDFLARE_ACCOUNT_ID}"
 
       - name: Publicar no Cloudflare Pages
-        if: matrix.target == 'cloudflare'
-        shell: bash
+        id: cloudflare-deploy
+        uses: cloudflare/wrangler-action@v3
         env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: |
-          set -euo pipefail
+          NODE_OPTIONS: --dns-result-order=ipv4first
+          WRANGLER_SEND_METRICS: "false"
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          wranglerVersion: "4.114.0"
+          command: pages deploy .deploy/site --project-name=siddevbr-cloud-mirror --branch=main --commit-hash=${{ github.sha }}
+          gitHubToken: ${{ secrets.GITHUB_TOKEN }}
 
-          for tentativa in 1 2 3 4; do
-            echo "Tentativa ${tentativa} de 4 para publicar no Cloudflare Pages"
-
-            if npx --yes wrangler@4.114.0 pages deploy "${PUBLISH_DIR}" \
-              --project-name "siddevbr-cloud-mirror" \
-              --branch "main" \
-              --commit-hash "${GITHUB_SHA}"; then
-              exit 0
-            fi
-
-            if [ "${tentativa}" -eq 4 ]; then
-              echo "Falha definitiva após 4 tentativas." >&2
-              exit 1
-            fi
-
-            espera=$((tentativa * 15))
-            echo "Falha transitória. Nova tentativa em ${espera} segundos."
-            sleep "${espera}"
-          done
-
-      - name: Verificar endereço publicado
+      - name: Verificar Cloudflare publicado
         shell: bash
         run: |
           set -euo pipefail
-
-          if [ "${{ matrix.target }}" = "netlify" ]; then
-            TARGET_URL="https://siddevbr-mirror.netlify.app"
-          else
-            TARGET_URL="https://siddevbr-cloud-mirror.pages.dev"
-          fi
-
-          echo "Verificando ${TARGET_URL}"
 
           curl \
             --fail \
@@ -165,9 +194,8 @@ jobs:
             --retry 5 \
             --retry-delay 5 \
             --retry-all-errors \
-            "${TARGET_URL}/?commit=${GITHUB_SHA}" \
-            --output "/tmp/site.html"
+            "https://siddevbr-cloud-mirror.pages.dev/?commit=${GITHUB_SHA}" \
+            --output /tmp/cloudflare.html
 
-          grep -qi "<html" "/tmp/site.html"
-
-          echo "Publicação confirmada em ${TARGET_URL}"
+          grep -qi "<html" /tmp/cloudflare.html
+          echo "Publicação Cloudflare confirmada."
