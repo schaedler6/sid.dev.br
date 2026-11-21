@@ -2,7 +2,14 @@
 
 Sid Schaedler também mantém projetos autorais ligados à escrita, publicação digital, música e identidade criativa.
 
-## Livro em destaque
+## Livros
+
+### Mendigos Digitais
+
+*Lado A: A Moeda e o Espelho*, de Sid Schaedler, é uma ficção satírica sobre visibilidade, dinheiro e aprovação nas redes sociais.
+
+- [Sinopse e ficha de Mendigos Digitais](https://sid.dev.br/livros/mendigos-digitais/)
+- [Comprar no Clube de Autores](https://clubedeautores.com.br/livro/mendigos-digitais)
 
 ### Minha Vó Era Vida Loca e Agora é Gamer
 

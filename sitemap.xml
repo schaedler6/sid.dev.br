@@ -7,6 +7,10 @@
   </url>
 
   <url>
+    <loc>https://sid.dev.br/livros/mendigos-digitais/</loc>
+  </url>
+
+  <url>
     <loc>https://sid.dev.br/llms.txt</loc>
     <priority>0.95</priority>
   </url>
