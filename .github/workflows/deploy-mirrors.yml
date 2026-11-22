@@ -24,11 +24,14 @@ jobs:
           }
           test -n "$NETLIFY_SITE_ID" && test -n "$NETLIFY_AUTH_TOKEN"
           test -n "$CLOUDFLARE_ACCOUNT_ID" && test -n "$CLOUDFLARE_API_TOKEN"
+          for key in NETLIFY_SITE_ID NETLIFY_AUTH_TOKEN CLOUDFLARE_ACCOUNT_ID CLOUDFLARE_API_TOKEN; do
+            if [[ "${!key}" =~ [[:space:]] ]]; then printf '%s: contém espaço em branco\n' "$key"; fi
+          done
           check netlify "https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}" "$NETLIFY_AUTH_TOKEN"
           if test -s "${work}/netlify.json"; then
-            jq -r 'if .name == "siddevbr-mirror" then "Netlify: projeto esperado" else "Netlify: projeto não confirmado" end' "${work}/netlify.json"
+            jq -r 'if type == "object" and .name == "siddevbr-mirror" then "Netlify: projeto esperado" else "Netlify: projeto não confirmado" end' "${work}/netlify.json" 2>/dev/null || printf 'Netlify: resposta não JSON\n'
           fi
           check cloudflare "https://api.cloudflare.com/client/v4/accounts/${CLOUDFLARE_ACCOUNT_ID}/pages/projects/siddevbr-cloud-mirror" "$CLOUDFLARE_API_TOKEN"
           if test -s "${work}/cloudflare.json"; then
-            jq -r 'if .success and .result.name == "siddevbr-cloud-mirror" then "Cloudflare: projeto esperado" else "Cloudflare: códigos do provedor " + ([.errors[]?.code | tostring] | join(",")) end' "${work}/cloudflare.json"
+            jq -r 'if type == "object" and .success and .result.name == "siddevbr-cloud-mirror" then "Cloudflare: projeto esperado" else "Cloudflare: códigos do provedor " + ([.errors[]?.code | tostring] | join(",")) end' "${work}/cloudflare.json" 2>/dev/null || printf 'Cloudflare: resposta não JSON\n'
           fi
