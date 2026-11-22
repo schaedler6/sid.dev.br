@@ -24,6 +24,18 @@ const ctx = canvas.getContext("2d");
 let particles = [];
 let particleFrame;
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+const motionKey = "sid-ambient-motion";
+let motionPreference = null;
+
+try {
+  motionPreference = localStorage.getItem(motionKey);
+} catch {
+  // Use the browser preference when local storage is unavailable.
+}
+
+function ambientMotionEnabled() {
+  return motionPreference === "on" || (motionPreference !== "off" && !reducedMotion.matches);
+}
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
@@ -47,9 +59,10 @@ function createParticles() {
 
 function drawParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
+  const animate = ambientMotionEnabled();
 
   particles.forEach((p) => {
-    if (!reducedMotion.matches) {
+    if (animate) {
       p.x += p.dx;
       p.y += p.dy;
       if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
@@ -62,7 +75,7 @@ function drawParticles() {
     ctx.fill();
   });
 
-  if (!reducedMotion.matches) {
+  if (animate) {
     particleFrame = requestAnimationFrame(drawParticles);
   }
 }
@@ -80,15 +93,13 @@ window.addEventListener("resize", () => {
 
 resizeCanvas();
 createParticles();
-refreshParticles();
-reducedMotion.addEventListener("change", refreshParticles);
 
 const heroOrb = document.querySelector(".hero-orbisite-alpha-video");
 const orbVisible = window.matchMedia("(width > 1000px)");
 
 function updateHeroOrb() {
   if (!heroOrb) return;
-  if (orbVisible.matches && !reducedMotion.matches) {
+  if (orbVisible.matches && ambientMotionEnabled()) {
     heroOrb.removeAttribute("poster");
     if (!heroOrb.hasAttribute("src")) heroOrb.src = heroOrb.dataset.src;
     return;
@@ -106,9 +117,33 @@ function updateHeroOrb() {
   }
 }
 
+const motionToggle = document.getElementById("animacoes");
+
+function refreshAmbientMotion() {
+  refreshParticles();
+  updateHeroOrb();
+  motionToggle.setAttribute("aria-pressed", String(ambientMotionEnabled()));
+}
+
+motionToggle.parentElement.hidden = false;
+motionToggle.addEventListener("click", () => {
+  motionPreference = ambientMotionEnabled() ? "off" : "on";
+  try {
+    localStorage.setItem(motionKey, motionPreference);
+  } catch {
+    // Keep the selected setting for this page when storage is unavailable.
+  }
+  refreshAmbientMotion();
+});
+
+window.addEventListener("storage", (event) => {
+  if (event.storageArea !== localStorage || (event.key !== motionKey && event.key !== null)) return;
+  motionPreference = event.newValue;
+  refreshAmbientMotion();
+});
 orbVisible.addEventListener("change", updateHeroOrb);
-reducedMotion.addEventListener("change", updateHeroOrb);
-updateHeroOrb();
+reducedMotion.addEventListener("change", refreshAmbientMotion);
+refreshAmbientMotion();
 
 
 /* SID_START_9X16_LIGHTBOX_JS */
