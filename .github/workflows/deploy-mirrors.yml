@@ -19,14 +19,26 @@ jobs:
           work="$(mktemp -d)"
           check() {
             local provider="$1" address="$2" credential="$3" code exit_status=0
-            code="$(curl -4 -sS --connect-timeout 8 --max-time 18               -H "Authorization: Bearer ${credential}"               -o "${work}/${provider}.json" -w '%{http_code}' "${address}")" || exit_status=$?
+            local headers=()
+            if test -n "$credential"; then headers=(-H "Authorization: Bearer ${credential}"); fi
+            code="$(curl -4 -sS --connect-timeout 8 --max-time 18 "${headers[@]}" -D "${work}/${provider}.headers" -o "${work}/${provider}.json" -w '%{http_code}' "${address}")" || exit_status=$?
             printf '%s HTTP %s (curl %s)\n' "$provider" "$code" "$exit_status"
+            grep -Ei '^(content-type:|server:|via:|x-cache:)' "${work}/${provider}.headers" || true
+            if [[ -f "${work}/${provider}.json" ]]; then
+              printf '%s comprimento e hash ' "$provider"
+              wc -c < "${work}/${provider}.json"
+              sha256sum "${work}/${provider}.json" | cut -c1-12
+              if grep -Eqi '400 Bad Request' "${work}/${provider}.json"; then printf 'Corpo informa Bad Request\n'; fi
+              if grep -Eqi 'policy|proxy|blocked|denied' "${work}/${provider}.json"; then printf 'Corpo menciona proxy ou restrição\n'; fi
+            fi
           }
           test -n "$NETLIFY_SITE_ID" && test -n "$NETLIFY_AUTH_TOKEN"
           test -n "$CLOUDFLARE_ACCOUNT_ID" && test -n "$CLOUDFLARE_API_TOKEN"
           for key in NETLIFY_SITE_ID NETLIFY_AUTH_TOKEN CLOUDFLARE_ACCOUNT_ID CLOUDFLARE_API_TOKEN; do
             if [[ "${!key}" =~ [[:space:]] ]]; then printf '%s: contém espaço em branco\n' "$key"; fi
           done
+          check netlify-anon "https://api.netlify.com/api/v1/sites" ""
+          check cloudflare-anon "https://api.cloudflare.com/client/v4/user/tokens/verify" ""
           check netlify "https://api.netlify.com/api/v1/sites/${NETLIFY_SITE_ID}" "$NETLIFY_AUTH_TOKEN"
           if test -s "${work}/netlify.json"; then
             jq -r 'if type == "object" and .name == "siddevbr-mirror" then "Netlify: projeto esperado" else "Netlify: projeto não confirmado" end' "${work}/netlify.json" 2>/dev/null || printf 'Netlify: resposta não JSON\n'
