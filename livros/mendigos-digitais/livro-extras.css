@@ -62,3 +62,18 @@
   padding-block: .8rem;
   border-block-start: 1px solid rgba(255, 255, 255, .14);
 }
+
+.book-buy-primary {
+  color: #061018;
+}
+
+.book-spec {
+  position: relative;
+  padding-inline-start: calc(1rem + 18px + .75rem);
+}
+
+.book-spec dt svg {
+  position: absolute;
+  inset-inline-start: 1rem;
+  inset-block-start: .875rem;
+}

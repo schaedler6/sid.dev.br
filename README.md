@@ -2,7 +2,7 @@
 
 Portfólio digital oficial de Sid Schaedler.
 
-Sid Schaedler é estudante de Análise e Desenvolvimento de Sistemas na Universidade Feevale, com foco principal em criação e desenvolvimento de sistemas.
+Sid Schaedler é estudante de Análise e Desenvolvimento de Sistemas na Universidade Feevale, com foco em QA júnior, testes de software e automação.
 
 Além do desenvolvimento de sistemas, também desenvolve projetos práticos envolvendo inteligência artificial, servidores, automação com PowerShell/Python e cibersegurança defensiva.
 

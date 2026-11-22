@@ -4,7 +4,7 @@ Os projetos técnicos de Sid Schaedler estão organizados em torno de criação 
 
 ## Foco principal
 
-O foco principal do portfólio é o desenvolvimento de sistemas.
+O portfólio prioriza QA, testes de software e automação.
 
 ## Áreas dos projetos
 

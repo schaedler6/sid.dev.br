@@ -2,7 +2,7 @@
 
 Official digital portfolio of Sid Schaedler.
 
-Sid Schaedler is a Systems Analysis and Development student at Feevale University, with a primary focus on creating and developing systems.
+Sid Schaedler is a Systems Analysis and Development student at Feevale University, with a focus on junior QA, software testing, and automation.
 
 In addition to systems development, Sid also builds practical projects involving artificial intelligence, servers, PowerShell/Python automation and defensive cybersecurity.
 

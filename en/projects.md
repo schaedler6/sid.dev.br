@@ -4,7 +4,7 @@ Sid Schaedler's technical projects are organized around system creation and deve
 
 ## Main focus
 
-The main focus of the portfolio is systems development.
+The portfolio focuses on QA, software testing, and automation.
 
 ## Project areas
 

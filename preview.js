@@ -22,6 +22,8 @@ revealItems.forEach((item) => revealObserver.observe(item));
 const canvas = document.getElementById("canvas-bg");
 const ctx = canvas.getContext("2d");
 let particles = [];
+let particleFrame;
+const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
@@ -47,11 +49,12 @@ function drawParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
   particles.forEach((p) => {
-    p.x += p.dx;
-    p.y += p.dy;
-
-    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    if (!reducedMotion.matches) {
+      p.x += p.dx;
+      p.y += p.dy;
+      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
+    }
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
@@ -59,17 +62,53 @@ function drawParticles() {
     ctx.fill();
   });
 
-  requestAnimationFrame(drawParticles);
+  if (!reducedMotion.matches) {
+    particleFrame = requestAnimationFrame(drawParticles);
+  }
+}
+
+function refreshParticles() {
+  cancelAnimationFrame(particleFrame);
+  drawParticles();
 }
 
 window.addEventListener("resize", () => {
   resizeCanvas();
   createParticles();
+  refreshParticles();
 });
 
 resizeCanvas();
 createParticles();
-drawParticles();
+refreshParticles();
+reducedMotion.addEventListener("change", refreshParticles);
+
+const heroOrb = document.querySelector(".hero-orbisite-alpha-video");
+const orbVisible = window.matchMedia("(width > 1000px)");
+
+function updateHeroOrb() {
+  if (!heroOrb) return;
+  if (orbVisible.matches && !reducedMotion.matches) {
+    heroOrb.removeAttribute("poster");
+    if (!heroOrb.hasAttribute("src")) heroOrb.src = heroOrb.dataset.src;
+    return;
+  }
+
+  if (heroOrb.hasAttribute("src")) {
+    heroOrb.pause();
+    heroOrb.removeAttribute("src");
+    heroOrb.load();
+  }
+  if (orbVisible.matches) {
+    heroOrb.poster = heroOrb.dataset.poster;
+  } else {
+    heroOrb.removeAttribute("poster");
+  }
+}
+
+orbVisible.addEventListener("change", updateHeroOrb);
+reducedMotion.addEventListener("change", updateHeroOrb);
+updateHeroOrb();
 
 
 /* SID_START_9X16_LIGHTBOX_JS */
@@ -288,38 +327,3 @@ drawParticles();
 })();
 
 // SID_END_PACMAN_GITHUB_JS_FORCE_20260612
-
-
-
-
-
-
-/* SID_START_KEYBOARD_CARDS_20260709 */
-
-(function sidKeyboardProjectCards() {
-  const cards = document.querySelectorAll(
-    '.project-premium-card[role="link"][tabindex="0"]'
-  );
-
-  cards.forEach((card) => {
-    const heading = card.querySelector("h3");
-
-    if (!card.hasAttribute("aria-label") && heading) {
-      card.setAttribute(
-        "aria-label",
-        `Abrir projeto: ${heading.textContent.trim()}`
-      );
-    }
-
-    card.addEventListener("keydown", (event) => {
-      if (event.target !== card) return;
-
-      if (event.key === "Enter" || event.key === " ") {
-        event.preventDefault();
-        card.click();
-      }
-    });
-  });
-})();
-
-/* SID_END_KEYBOARD_CARDS_20260709 */

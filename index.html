@@ -61,7 +61,7 @@
 }
   </script>
   <!-- /SID SEO PHASE 1 -->
-  <link rel="stylesheet" href="preview.css?v=css-refactor-pass1-20260709">
+  <link rel="stylesheet" href="preview.css?v=visibility-20261122-livros">
   <link rel="sitemap" type="application/xml" href="sitemap.xml">
   <link rel="alternate" type="text/plain" href="llms.txt" title="LLMS.txt">
   <link rel="alternate" type="text/markdown" href="SOBRE-SID.md" title="Sobre Sid Schaedler">
@@ -657,7 +657,7 @@ footer,
       <a href="#qa">QA</a>
       <a href="#projetos">Projetos</a>
       <a href="#github">GitHub</a>
-      <a href="#livros">Livro</a>
+      <a href="#livros">Livros</a>
       <a href="#musica">Música</a>
       <a href="#galeria">Galeria</a>
       <a href="#contato">Contato</a>
@@ -667,6 +667,7 @@ footer,
   <nav class="mobile-bottom-nav" aria-label="Navegação rápida mobile">
     <a href="#inicio">Início</a>
     <a href="#qa">QA</a>
+    <a href="#livros">Livros</a>
     <a href="#projetos">Projetos</a>
     <a href="#github">GitHub</a>
     <a href="assets/curriculo/Curriculo_Sidinei_QA_Junior.pdf">CV</a>
@@ -692,9 +693,16 @@ footer,
 
       <div class="hero-visual reveal">
         <div class="hero-orbisite-alpha-wrap">
-          <video class="hero-orbisite-alpha-video" autoplay muted loop playsinline preload="metadata">
-            <source src="assets/videos/orbisite-alpha.webm?v=20260612-alpha-final" type="video/webm">
-          </video>
+          <video class="hero-orbisite-alpha-video" autoplay muted loop playsinline preload="none"
+                 data-src="assets/videos/orbisite-alpha.webm?v=20260612-alpha-final"
+                 data-poster="assets/videos/orbisite-estatico.webp" aria-hidden="true"></video>
+          <noscript>
+            <picture>
+              <source media="(width > 1000px)" srcset="assets/videos/orbisite-estatico.webp">
+              <img class="hero-orbisite-alpha-video hero-orbisite-fallback" width="860" height="484" alt=""
+                   src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7">
+            </picture>
+          </noscript>
 </div>
         
                                 
@@ -720,11 +728,12 @@ footer,
       </div>
 
       <div class="projects-premium-grid">
-        <article class="project-premium-card reveal project-featured" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/01-testes-manuais','_blank','noopener')">
+        <a class="project-premium-card reveal project-featured project-card-link" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/01-testes-manuais"
+           target="_blank" rel="noopener noreferrer" aria-labelledby="qa-01-testes-manuais">
           <div class="project-number">QA 01</div>
           <div class="project-content">
             <span class="project-type">Testes Manuais • Regressão • Evidências</span>
-            <h3>Testes Manuais</h3>
+            <h3 id="qa-01-testes-manuais">Testes Manuais</h3>
             <p>Criação de cenários, casos de teste, checklists, validação de fluxos, regressão e evidências.</p>
             <div class="project-tags">
               <span>Casos de Teste</span>
@@ -732,15 +741,16 @@ footer,
               <span>Regressão</span>
               <span>Evidências</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/01-testes-manuais" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p class="project-cta"><span class="project-github-link">Abrir projeto no GitHub →</span></p>
           </div>
-        </article>
+        </a>
 
-        <article class="project-premium-card reveal" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/02-bug-reports','_blank','noopener')">
+        <a class="project-premium-card reveal project-card-link" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/02-bug-reports"
+           target="_blank" rel="noopener noreferrer" aria-labelledby="qa-02-bug-reports">
           <div class="project-number">QA 02</div>
           <div class="project-content">
             <span class="project-type">Bugs • Documentação • Severidade</span>
-            <h3>Bug Reports</h3>
+            <h3 id="qa-02-bug-reports">Bug Reports</h3>
             <p>Relatórios com ambiente, passos para reprodução, resultado esperado, resultado obtido, severidade e evidências.</p>
             <div class="project-tags">
               <span>Bug Report</span>
@@ -748,15 +758,16 @@ footer,
               <span>Severidade</span>
               <span>Reprodução</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/02-bug-reports" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p class="project-cta"><span class="project-github-link">Abrir projeto no GitHub →</span></p>
           </div>
-        </article>
+        </a>
 
-        <article class="project-premium-card reveal" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/03-testes-api','_blank','noopener')">
+        <a class="project-premium-card reveal project-card-link" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/03-testes-api"
+           target="_blank" rel="noopener noreferrer" aria-labelledby="qa-03-testes-api">
           <div class="project-number">QA 03</div>
           <div class="project-content">
             <span class="project-type">API • REST • JSON • Postman</span>
-            <h3>Testes de API</h3>
+            <h3 id="qa-03-testes-api">Testes de API</h3>
             <p>Validação de endpoints REST, status codes, respostas JSON, autenticação, erros e consistência de dados.</p>
             <div class="project-tags">
               <span>Postman</span>
@@ -764,15 +775,16 @@ footer,
               <span>JSON</span>
               <span>Status Codes</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/03-testes-api" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p class="project-cta"><span class="project-github-link">Abrir projeto no GitHub →</span></p>
           </div>
-        </article>
+        </a>
 
-        <article class="project-premium-card reveal" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/04-automacao-qa','_blank','noopener')">
+        <a class="project-premium-card reveal project-card-link" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/04-automacao-qa"
+           target="_blank" rel="noopener noreferrer" aria-labelledby="qa-04-automacao-qa">
           <div class="project-number">QA 04</div>
           <div class="project-content">
             <span class="project-type">Python • PowerShell • Automação</span>
-            <h3>Automação para QA</h3>
+            <h3 id="qa-04-automacao-qa">Automação para QA</h3>
             <p>Scripts e rotinas para validações, organização de evidências, padronização de testes e produtividade.</p>
             <div class="project-tags">
               <span>Python</span>
@@ -780,15 +792,16 @@ footer,
               <span>Automação</span>
               <span>Validação</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/04-automacao-qa" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p class="project-cta"><span class="project-github-link">Abrir projeto no GitHub →</span></p>
           </div>
-        </article>
+        </a>
 
-        <article class="project-premium-card reveal" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/05-visual-qa','_blank','noopener')">
+        <a class="project-premium-card reveal project-card-link" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/05-visual-qa"
+           target="_blank" rel="noopener noreferrer" aria-labelledby="qa-05-visual-qa">
           <div class="project-number">QA 05</div>
           <div class="project-content">
             <span class="project-type">Visual QA • Responsividade • Interface</span>
-            <h3>Visual QA</h3>
+            <h3 id="qa-05-visual-qa">Visual QA</h3>
             <p>Checklist visual, responsividade, contraste, alinhamento, layout, botões, menu e padronização visual.</p>
             <div class="project-tags">
               <span>Visual QA</span>
@@ -796,15 +809,16 @@ footer,
               <span>Contraste</span>
               <span>Layout</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/05-visual-qa" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p class="project-cta"><span class="project-github-link">Abrir projeto no GitHub →</span></p>
           </div>
-        </article>
+        </a>
 
-        <article class="project-premium-card reveal" style="cursor:pointer" role="link" tabindex="0" onclick="window.open('https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/06-qa-seguranca-defensiva','_blank','noopener')">
+        <a class="project-premium-card reveal project-card-link" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/06-qa-seguranca-defensiva"
+           target="_blank" rel="noopener noreferrer" aria-labelledby="qa-06-qa-seguranca-defensiva">
           <div class="project-number">QA 06</div>
           <div class="project-content">
             <span class="project-type">QA • Segurança Defensiva • Boas Práticas</span>
-            <h3>QA + Cibersegurança Defensiva</h3>
+            <h3 id="qa-06-qa-seguranca-defensiva">QA + Cibersegurança Defensiva</h3>
             <p>Validação defensiva de HTTPS, exposição de dados, mensagens de erro, arquivos públicos, logs e permissões.</p>
             <div class="project-tags">
               <span>Segurança</span>
@@ -812,9 +826,9 @@ footer,
               <span>Logs</span>
               <span>Permissões</span>
             </div>
-            <p class="project-cta"><a class="project-github-link" onclick="event.stopPropagation();" href="https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/06-qa-seguranca-defensiva" target="_blank" rel="noopener">Abrir projeto no GitHub →</a></p>
+            <p class="project-cta"><span class="project-github-link">Abrir projeto no GitHub →</span></p>
           </div>
-        </article>
+        </a>
       </div>
     </section>
 
@@ -830,16 +844,12 @@ footer,
 
       <div class="projects-premium-grid">
         <!-- SID_START_HERMES_DISCOVERY_CARD_V010 -->
-        <article class="project-premium-card reveal"
-                 style="cursor:pointer"
-                 role="link"
-                 tabindex="0"
-                 onclick="window.open('https://github.com/schaedler6/hermes-discovery-catalog','_blank','noopener')"
-                 onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();window.open('https://github.com/schaedler6/hermes-discovery-catalog','_blank','noopener');}">
+        <a class="project-premium-card reveal project-card-link" href="https://github.com/schaedler6/hermes-discovery-catalog"
+           target="_blank" rel="noopener noreferrer" aria-labelledby="hermes-discovery-catalog">
           <div class="project-number">OPEN 01</div>
           <div class="project-content">
             <span class="project-type">Go • Catálogo de IA • Evidências rastreáveis</span>
-            <h3>Hermes Discovery-Catalog</h3>
+            <h3 id="hermes-discovery-catalog">Hermes Discovery-Catalog</h3>
             <p>
               Protótipo determinístico em Go que transforma observações e evidências
               sintéticas em um catálogo normalizado, rastreável e deduplicado de
@@ -852,16 +862,12 @@ footer,
               <span>Deduplicação</span>
             </div>
             <p class="project-cta">
-              <a class="project-github-link"
-                 onclick="event.stopPropagation();"
-                 href="https://github.com/schaedler6/hermes-discovery-catalog"
-                 target="_blank"
-                 rel="noopener noreferrer">
+              <span class="project-github-link">
                 Abrir projeto v0.1.0 no GitHub →
-              </a>
+              </span>
             </p>
           </div>
-        </article>
+        </a>
         <!-- SID_END_HERMES_DISCOVERY_CARD_V010 -->
 
         <article class="project-premium-card reveal project-featured">
@@ -3102,12 +3108,42 @@ footer,
           <a href="#galeria" class="btn secondary">
             Ver imagens do projeto
           </a>
+          <a href="#mendigos-digitais" class="btn secondary">
+            Mendigos Digitais
+          </a>
         </div>
       </div>
 
       <div class="official-book-card reveal">
         <a href="https://a.co/d/0f5F0sud" target="_blank" rel="noopener noreferrer" aria-label="Abrir livro Minha Vo Era Vida Loca e Agora e Gamer na Amazon">
           <img src="assets/images/livros/capanova.png?v=capa-nova-20260612" alt="Capa do livro Minha Vó Era Vida Loca e Agora é Gamer">
+        </a>
+      </div>
+    </section>
+
+    <section id="mendigos-digitais" class="section books books-official" aria-labelledby="titulo-mendigos-digitais">
+      <div class="books-text reveal">
+        <p class="eyebrow">Ficção satírica • Lado A: A Moeda e o Espelho</p>
+        <h2 id="titulo-mendigos-digitais">Mendigos Digitais</h2>
+        <p>
+          Na ClikClak, todo mundo quer alguma coisa. Uma sátira sobre dinheiro,
+          visibilidade e a busca por aprovação nas redes sociais.
+        </p>
+
+        <div class="book-actions">
+          <a href="https://clubedeautores.com.br/livro/mendigos-digitais" target="_blank" rel="noopener noreferrer" class="btn primary">
+            Ver no Clube de Autores
+          </a>
+          <a href="/livros/mendigos-digitais/#sinopse" class="btn secondary">
+            Ler a sinopse
+          </a>
+        </div>
+      </div>
+
+      <div class="official-book-card reveal">
+        <a href="/livros/mendigos-digitais/" aria-label="Abrir a página de Mendigos Digitais">
+          <img src="/livros/mendigos-digitais/capa-960.webp" width="960" height="1440" loading="lazy" decoding="async"
+               alt="Capa de Mendigos Digitais, de Sid Schaedler">
         </a>
       </div>
     </section>
@@ -3155,25 +3191,25 @@ footer,
 
   <div class="gallery-grid sid-gallery-approved-grid">
     <article class="sid-gallery-approved-card reveal">
-      <img src="assets/images/galeria-curada/kabbalahsite.PNG?v=galeria-aprovada-20260612" alt="Arte visual do projeto Kabbalah Studio com identidade visual e simbologia.">
+      <img loading="lazy" src="assets/images/galeria-curada/kabbalahsite-lossless.webp" alt="Arte visual do projeto Kabbalah Studio com identidade visual e simbologia.">
       <p class="sid-gallery-approved-tag">IDENTIDADE VISUAL E SIMBOLOGIA</p>
       <h3>Kabbalah Studio</h3>
     </article>
 
     <article class="sid-gallery-approved-card reveal">
-      <img src="assets/images/galeria-curada/sid_visual.JPG?v=galeria-aprovada-20260612" alt="Retrato visual autoral de SID criado como experimento com inteligência artificial.">
+      <img loading="lazy" src="assets/images/galeria-curada/sid_visual.JPG?v=galeria-aprovada-20260612" alt="Retrato visual autoral de SID criado como experimento com inteligência artificial.">
       <p class="sid-gallery-approved-tag">EXPERIMENTO VISUAL COM IA</p>
       <h3>SID Visual</h3>
     </article>
 
     <article class="sid-gallery-approved-card reveal">
-      <img src="assets/images/galeria-curada/capanova.png?v=galeria-aprovada-20260612" alt="Capa do livro Minha Vó Era Vida Loca e Agora é Gamer.">
+      <img loading="lazy" src="assets/images/galeria-curada/capanova-lossless.webp" alt="Capa do livro Minha Vó Era Vida Loca e Agora é Gamer.">
       <p class="sid-gallery-approved-tag">DESIGN EDITORIAL E KDP</p>
       <h3>Minha Vó Era Vida Loca e Agora é Gamer</h3>
     </article>
 
     <article class="sid-gallery-approved-card reveal">
-      <img src="assets/images/galeria-curada/IMG_8637.PNG?v=galeria-aprovada-20260612" alt="Imagem de criação digital autoral do ecossistema SID.">
+      <img loading="lazy" src="assets/images/galeria-curada/IMG_8637-lossless.webp" alt="Imagem de criação digital autoral do ecossistema SID.">
       <p class="sid-gallery-approved-tag">CRIAÇÃO DIGITAL</p>
       <h3>Criação Digital SID</h3>
     </article>
@@ -3192,7 +3228,7 @@ footer,
   <a href="https://www.linkedin.com/in/sidschaedler/" class="btn secondary" target="_blank" rel="noopener noreferrer">LINKEDIN</a>
   <a href="https://github.com/schaedler6" class="btn secondary" target="_blank" rel="noopener noreferrer">GITHUB</a>
   <a href="https://open.spotify.com/intl-pt/artist/4JpSt47bo8afDdSu7DqSH4" class="btn secondary" target="_blank" rel="noopener noreferrer">SPOTIFY</a>
-  <a href="https://a.co/d/0dfRl0qN" class="btn secondary" target="_blank" rel="noopener noreferrer">AMAZON</a>
+  <a href="https://a.co/d/0f5F0sud" class="btn secondary" target="_blank" rel="noopener noreferrer">AMAZON</a>
 </div>
       </div>
     </section>

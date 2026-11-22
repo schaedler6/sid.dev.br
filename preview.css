@@ -710,6 +710,7 @@ footer {
 
 .official-book-card img {
   width: 100%;
+  height: auto;
   aspect-ratio: 2 / 3;
   display: block;
   object-fit: cover;
@@ -8923,3 +8924,22 @@ summary:focus-visible,
 }
 
 /* SID_END_ACCESSIBILITY_TAB_20260709 */
+
+.project-card-link {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+.project-card-link:focus-visible .project-github-link {
+  border-color: rgba(0, 245, 255, 0.9);
+  background: rgba(0, 245, 255, 0.16);
+  box-shadow: 0 0 24px rgba(0, 245, 255, 0.28);
+}
+
+@media (width > 1000px) {
+  .hero-orbisite-fallback {
+    position: absolute;
+    inset: 0;
+  }
+}
