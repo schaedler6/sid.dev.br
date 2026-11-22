@@ -6,6 +6,10 @@ Sid Schaedler é estudante de Análise e Desenvolvimento de Sistemas na Universi
 
 Além do desenvolvimento de sistemas, também desenvolve projetos práticos envolvendo inteligência artificial, servidores, automação com PowerShell/Python e cibersegurança defensiva.
 
+## Página inicial e espelhos
+
+No desktop, o orbe e as partículas entram em movimento assim que a página inicial carrega. No celular, o fundo anima e o vídeo do orbe fica fora do carregamento. A seção Livros apresenta as capas dos dois livros, com acesso à sinopse e à compra de Mendigos Digitais. [Site principal](https://sid.dev.br/) · [Netlify](https://siddevbr-mirror.netlify.app/) · [Cloudflare Pages](https://siddevbr-cloud-mirror.pages.dev/)
+
 ## Áreas principais
 
 - Análise e Desenvolvimento de Sistemas
