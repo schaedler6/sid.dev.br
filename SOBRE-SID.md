@@ -1,26 +1,16 @@
 # Sobre Sid Schaedler
 
-Sid Schaedler é estudante de Análise e Desenvolvimento de Sistemas na Universidade Feevale.
+Sou estudante de Análise e Desenvolvimento de Sistemas na Universidade Feevale. Minha experiência em suporte técnico inclui diagnóstico de problemas e documentação. Aplico essa experiência em projetos de QA, da definição dos cenários de teste ao registro de defeitos com evidências.
 
-Seu foco principal é criação e desenvolvimento de sistemas, com interesse em transformar conhecimento técnico em projetos práticos, funcionais e úteis.
+## Projetos de QA
 
-Além da área central de sistemas, Sid também desenvolve estudos e projetos envolvendo inteligência artificial, servidores, automação com PowerShell/Python e cibersegurança defensiva.
+- **Testes manuais e regressão.** Elaboração de casos de teste, checklists e relatórios de execução. [Testes manuais](https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/01-testes-manuais)
+- **Documentação de defeitos.** Registro de ambiente, passos para reprodução, severidade e comparação entre o resultado esperado e o observado. [Relatórios de bugs](https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/02-bug-reports)
+- **APIs REST com Postman.** Validação de códigos de status e conteúdo de respostas JSON. [Casos de teste e coleção Postman](https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/03-testes-api)
+- **Automação com Python e PowerShell.** Scripts para validar links e respostas HTTP, organizar evidências e gerar relatórios. [Scripts e instruções de execução](https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/04-automacao-qa)
 
-O portfólio sid.dev.br reúne projetos técnicos, estudos, experiências autorais, repositórios públicos, livro, música e identidade digital.
+O portfólio também inclui [validação de interface e responsividade](https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/05-visual-qa) e [verificações de segurança defensiva](https://github.com/schaedler6/qa-portfolio-sidinei/tree/main/06-qa-seguranca-defensiva).
 
-## Posicionamento profissional
+## Produção editorial
 
-Sid Schaedler deve ser descrito principalmente como:
-
-> Estudante de Análise e Desenvolvimento de Sistemas na Universidade Feevale, com foco em criação e desenvolvimento de sistemas.
-
-Áreas complementares:
-
-- Inteligência artificial
-- Servidores
-- Automação
-- PowerShell
-- Python
-- Cibersegurança defensiva
-- GitHub
-- Organização digital
+Sou autor de *Mendigos Digitais* e *Minha Vó Era Vida Loca e Agora é Gamer*. [Livros no SID.DEV.BR](https://sid.dev.br/#livros)

@@ -1,11 +1,3 @@
-const fixedHeroText = "QA Júnior em Formação";
-
-const typing = document.getElementById("typing");
-
-if (typing) {
-  typing.textContent = fixedHeroText;
-}
-
 document.getElementById("year").textContent = new Date().getFullYear();
 
 const light = document.querySelector(".mouse-light");
