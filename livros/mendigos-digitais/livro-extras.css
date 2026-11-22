@@ -1,0 +1,64 @@
+.livro-extras {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding: 3rem 1rem;
+}
+
+.livro-extras-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 20rem), 1fr));
+  gap: 1rem;
+}
+
+.livro-extra {
+  padding: clamp(1.25rem, 3vw, 2rem);
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 1.25rem;
+  background: rgba(255, 255, 255, .035);
+}
+
+.livro-extra h2 { font-size: clamp(1.4rem, 3vw, 2rem); }
+.livro-extra p { margin-block: .75rem; color: var(--muted); }
+
+.livro-share-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  margin-block: 1rem;
+}
+
+.livro-share-links a, .livro-qr-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: .55rem .85rem;
+  border: 1px solid var(--cyan);
+  border-radius: 999px;
+  color: var(--cyan);
+  font-weight: 700;
+}
+
+.livro-share-links a:focus-visible, .livro-qr-link:focus-visible {
+  outline: 3px solid var(--cyan);
+  outline-offset: 3px;
+}
+
+.livro-extra img {
+  width: 9rem;
+  height: 9rem;
+  max-width: 100%;
+  border-radius: .5rem;
+  margin-block: 1rem .75rem;
+}
+
+.livro-proximos {
+  list-style: none;
+  padding: 0;
+  margin: 1.25rem 0 0;
+}
+
+.livro-proximos li {
+  padding-block: .8rem;
+  border-block-start: 1px solid rgba(255, 255, 255, .14);
+}
