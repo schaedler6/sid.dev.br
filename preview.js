@@ -22,20 +22,6 @@ revealItems.forEach((item) => revealObserver.observe(item));
 const canvas = document.getElementById("canvas-bg");
 const ctx = canvas.getContext("2d");
 let particles = [];
-let particleFrame;
-const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
-const motionKey = "sid-ambient-motion";
-let motionPreference = null;
-
-try {
-  motionPreference = localStorage.getItem(motionKey);
-} catch {
-  // Use the browser preference when local storage is unavailable.
-}
-
-function ambientMotionEnabled() {
-  return motionPreference === "on" || (motionPreference !== "off" && !reducedMotion.matches);
-}
 
 function resizeCanvas() {
   canvas.width = window.innerWidth;
@@ -59,15 +45,12 @@ function createParticles() {
 
 function drawParticles() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
-  const animate = ambientMotionEnabled();
 
   particles.forEach((p) => {
-    if (animate) {
-      p.x += p.dx;
-      p.y += p.dy;
-      if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
-      if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
-    }
+    p.x += p.dx;
+    p.y += p.dy;
+    if (p.x < 0 || p.x > canvas.width) p.dx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.dy *= -1;
 
     ctx.beginPath();
     ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
@@ -75,32 +58,24 @@ function drawParticles() {
     ctx.fill();
   });
 
-  if (animate) {
-    particleFrame = requestAnimationFrame(drawParticles);
-  }
-}
-
-function refreshParticles() {
-  cancelAnimationFrame(particleFrame);
-  drawParticles();
+  requestAnimationFrame(drawParticles);
 }
 
 window.addEventListener("resize", () => {
   resizeCanvas();
   createParticles();
-  refreshParticles();
 });
 
 resizeCanvas();
 createParticles();
+drawParticles();
 
 const heroOrb = document.querySelector(".hero-orbisite-alpha-video");
 const orbVisible = window.matchMedia("(width > 1000px)");
 
 function updateHeroOrb() {
   if (!heroOrb) return;
-  if (orbVisible.matches && ambientMotionEnabled()) {
-    heroOrb.removeAttribute("poster");
+  if (orbVisible.matches) {
     if (!heroOrb.hasAttribute("src")) heroOrb.src = heroOrb.dataset.src;
     return;
   }
@@ -110,40 +85,10 @@ function updateHeroOrb() {
     heroOrb.removeAttribute("src");
     heroOrb.load();
   }
-  if (orbVisible.matches) {
-    heroOrb.poster = heroOrb.dataset.poster;
-  } else {
-    heroOrb.removeAttribute("poster");
-  }
 }
 
-const motionToggle = document.getElementById("animacoes");
-
-function refreshAmbientMotion() {
-  refreshParticles();
-  updateHeroOrb();
-  motionToggle.setAttribute("aria-pressed", String(ambientMotionEnabled()));
-}
-
-motionToggle.parentElement.hidden = false;
-motionToggle.addEventListener("click", () => {
-  motionPreference = ambientMotionEnabled() ? "off" : "on";
-  try {
-    localStorage.setItem(motionKey, motionPreference);
-  } catch {
-    // Keep the selected setting for this page when storage is unavailable.
-  }
-  refreshAmbientMotion();
-});
-
-window.addEventListener("storage", (event) => {
-  if (event.storageArea !== localStorage || (event.key !== motionKey && event.key !== null)) return;
-  motionPreference = event.newValue;
-  refreshAmbientMotion();
-});
 orbVisible.addEventListener("change", updateHeroOrb);
-reducedMotion.addEventListener("change", refreshAmbientMotion);
-refreshAmbientMotion();
+updateHeroOrb();
 
 
 /* SID_START_9X16_LIGHTBOX_JS */
